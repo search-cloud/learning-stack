@@ -1,5 +1,6 @@
 package io.vincent.learning.stack.netty.nio
 
+import org.slf4j.LoggerFactory
 import java.io.IOException
 import java.net.InetSocketAddress
 import java.nio.ByteBuffer
@@ -19,21 +20,22 @@ open class MultiplexerTimerServer(port: Int) : Runnable {
 
     private var selector: Selector? = null
     private lateinit var serverSocketChannel: ServerSocketChannel
+    @Volatile
     private var stop: Boolean = false
 
     init {
         try {
-            // 1. selector
-            selector = Selector.open()
-            // 2. ServerSocketChannel
+            // 1. ServerSocketChannel
             serverSocketChannel = ServerSocketChannel.open()
-            // 3. block false
+            // 2. block false
             serverSocketChannel.configureBlocking(false)
-            // 4. bind InetSocketAddress
+            // 3. bind InetSocketAddress
             serverSocketChannel.socket().bind(InetSocketAddress(port), 1024)
+            // 4. selector
+            selector = Selector.open()
             // 5. register selector on accept key
             serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT)
-            println("The time server is start in port: $port")
+            logger.info("The time server is start in port: $port")
         } catch (e: Exception) {
             e.printStackTrace()
             System.exit(1)
@@ -58,6 +60,7 @@ open class MultiplexerTimerServer(port: Int) : Runnable {
                         handleInput(key)
                     }
                 } catch (e: Exception) {
+                    logger.error("", e)
                     if (key != null) {
                         key.cancel()
                         if (key.channel() != null) {
@@ -72,7 +75,7 @@ open class MultiplexerTimerServer(port: Int) : Runnable {
             try {
                 selector!!.close()
             } catch (e: IOException) {
-
+                logger.error("", e)
             }
         }
     }
@@ -99,11 +102,12 @@ open class MultiplexerTimerServer(port: Int) : Runnable {
                         val bytes = ByteArray(readBuffer.remaining())
                         readBuffer.get(bytes)
                         val body = String(bytes, Charsets.UTF_8)
-                        println("The time server receive order: $body")
+                        logger.info("The time server receive order: $body")
                         val currentTIme = when {
                             "Query Time Order".equals(body, ignoreCase = true) -> Date(System.currentTimeMillis()).toString()
                             else -> "Bad Order"
                         }
+                        Thread.sleep(3000)
                         doWrite(channel, currentTIme)
                     }
                     readBytes < 0 -> {
@@ -127,5 +131,9 @@ open class MultiplexerTimerServer(port: Int) : Runnable {
             writeBuffer.flip()
             channel.write(writeBuffer)
         }
+    }
+
+    companion object {
+        private val logger = LoggerFactory.getLogger(MultiplexerTimerServer::class.java)
     }
 }

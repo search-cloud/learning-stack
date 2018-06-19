@@ -17,6 +17,9 @@ class TimeServer {
 
                 }
             }
+            val timerServer = MultiplexerTimerServer(port)
+            Thread(timerServer, "NIO-MultiplexerTimeServer-001").start()
+//            Thread(timerServer, "NIO-MultiplexerTimeServer-002").start()
         }
     }
 }
