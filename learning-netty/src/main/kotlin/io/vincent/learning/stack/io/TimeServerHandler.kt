@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.io
+package io.vincent.learning.stack.io
 
 import java.io.BufferedReader
 import java.io.IOException

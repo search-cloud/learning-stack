@@ -45,6 +45,9 @@ dependencies {
     // 用于与slf4j保持桥接
     compile("org.apache.logging.log4j", "log4j-slf4j-impl", "${log4j_version}")
 
+    // 4.1.25.Final
+    compile("io.netty","netty-all", "5.0.0.Alpha1")
+
     testCompile("junit", "junit", "4.12")
 }
 

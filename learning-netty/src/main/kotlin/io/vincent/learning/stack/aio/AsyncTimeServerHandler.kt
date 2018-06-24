@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.aio
+package io.vincent.learning.stack.aio
 
 import java.net.InetSocketAddress
 import java.nio.channels.AsynchronousServerSocketChannel
@@ -9,7 +9,7 @@ import java.util.concurrent.CountDownLatch
  * @author Asion.
  * @since 2018/6/22.
  */
-class AsyncTimeServerHandler(private val port: Int) : Runnable {
+class AsyncTimeServerHandler(port: Int) : Runnable {
 
     var asynchronousServerSocketChannel: AsynchronousServerSocketChannel = AsynchronousServerSocketChannel.open()
     lateinit var countDownLatch: CountDownLatch

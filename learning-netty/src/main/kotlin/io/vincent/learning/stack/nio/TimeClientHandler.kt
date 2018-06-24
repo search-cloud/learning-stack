@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.nio
+package io.vincent.learning.stack.nio
 
 import org.slf4j.LoggerFactory
 import java.net.InetSocketAddress

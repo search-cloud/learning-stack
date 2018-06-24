@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.nio
+package io.vincent.learning.stack.nio
 
 import java.util.concurrent.Executors
 

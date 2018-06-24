@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.aio
+package io.vincent.learning.stack.aio
 
 /**
  *

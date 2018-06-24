@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.aio
+package io.vincent.learning.stack.aio
 
 import java.nio.ByteBuffer
 import java.nio.channels.AsynchronousSocketChannel
