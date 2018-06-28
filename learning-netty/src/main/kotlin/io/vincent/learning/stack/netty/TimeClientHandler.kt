@@ -5,7 +5,6 @@ import io.netty.buffer.Unpooled
 import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
 import org.slf4j.LoggerFactory
-import java.util.*
 
 /**
  *
@@ -22,7 +21,7 @@ class TimeClientHandler : ChannelHandlerAdapter() {
         firstMessage.writeBytes(req)
     }
 
-    override fun channelInactive(ctx: ChannelHandlerContext?) {
+    override fun channelActive(ctx: ChannelHandlerContext?) {
         ctx!!.writeAndFlush(firstMessage)
     }
 

@@ -19,10 +19,9 @@ class TimeServerHandler : ChannelHandlerAdapter() {
         byteBuf.readBytes(req)
         val body = String(req, Charsets.UTF_8)
         println("The time server receive order: $body")
-        val currentTime = if ("Query Time Order".equals(body, true)) {
-            Date(System.currentTimeMillis()).toString()
-        } else {
-            "Bad Order"
+        val currentTime = when {
+            "Query Time Order".equals(body, true) -> Date(System.currentTimeMillis()).toString()
+            else -> "Bad Order"
         }
         val resp = Unpooled.copiedBuffer(currentTime.toByteArray())
         ctx!!.write(resp)
