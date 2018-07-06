@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 buildscript {
     var kotlinVersion: String by extra
-    kotlinVersion = "1.2.31"
+    kotlinVersion = "1.2.51"
 
     repositories {
         mavenCentral()
@@ -41,6 +41,7 @@ dependencies {
 configure<JavaPluginConvention> {
     sourceCompatibility = JavaVersion.VERSION_1_8
 }
+
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
 }
