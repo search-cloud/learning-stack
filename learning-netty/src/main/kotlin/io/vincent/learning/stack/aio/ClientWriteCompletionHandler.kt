@@ -6,6 +6,7 @@ import java.nio.channels.CompletionHandler
 import java.util.concurrent.CountDownLatch
 
 /**
+ * Client write message to Server callback handler.
  *
  * @author Asion.
  * @since 2018/6/22.

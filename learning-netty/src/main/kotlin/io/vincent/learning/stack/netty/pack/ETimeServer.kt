@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty
+package io.vincent.learning.stack.netty.pack
 
 import io.netty.bootstrap.ServerBootstrap
 import io.netty.channel.ChannelInitializer
@@ -6,13 +6,14 @@ import io.netty.channel.ChannelOption
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioServerSocketChannel
+import io.vincent.learning.stack.netty.TimeServerHandler
 
 /**
  *
  * @author Asion.
  * @since 2018/6/24.
  */
-class TimeServer {
+class ETimeServer {
 
     fun bind(port: Int) {
         val bossGroup = NioEventLoopGroup()
@@ -42,7 +43,7 @@ class TimeServer {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            TimeServer().bind(8080)
+            ETimeServer().bind(8080)
         }
     }
 }

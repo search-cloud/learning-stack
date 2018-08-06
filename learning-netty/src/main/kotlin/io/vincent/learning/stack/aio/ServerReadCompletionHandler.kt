@@ -6,11 +6,12 @@ import java.nio.channels.CompletionHandler
 import java.util.*
 
 /**
+ * Server read message from Client callback handler。
  *
  * @author Asion.
  * @since 2018/6/22.
  */
-class ReadCompletionHandler(private val channel: AsynchronousSocketChannel) : CompletionHandler<Int, ByteBuffer> {
+class ServerReadCompletionHandler(private val channel: AsynchronousSocketChannel) : CompletionHandler<Int, ByteBuffer> {
     override fun completed(result: Int?, attachment: ByteBuffer?) {
         attachment!!.flip()
         val body = ByteArray(attachment.remaining())
