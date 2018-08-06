@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.netty.pack
+package io.vincent.learning.stack.netty.decoder
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
@@ -8,20 +8,19 @@ import org.slf4j.LoggerFactory
 
 /**
  *
- * @author Asion.
- * @since 2018/6/24.
+ * @author Vincent.
+ * @since 2018/8/6.
  */
-class ETimeClientHandler : ChannelHandlerAdapter() {
+class DecoderTimeClientHandler : ChannelHandlerAdapter() {
 
 //    private var message: ByteBuf
 
-    private var req: ByteArray
+    private var req: ByteArray = "Query Time Order${System.getProperty("line.separator")}".toByteArray()
     private var counter = 0
 
     init {
-        req = "Query Time Order${System.getProperty("line.separator")}".toByteArray()
-//        message = Unpooled.buffer(req.size)
-//        message.writeBytes(req)
+        //        message = Unpooled.buffer(req.size)
+        //        message.writeBytes(req)
     }
 
     override fun channelActive(ctx: ChannelHandlerContext?) {
@@ -36,10 +35,10 @@ class ETimeClientHandler : ChannelHandlerAdapter() {
     }
 
     override fun channelRead(ctx: ChannelHandlerContext?, msg: Any?) {
-        val byteBuf = msg as ByteBuf
-        req = ByteArray(byteBuf.readableBytes())
-        byteBuf.readBytes(req)
-        val body = String(req, Charsets.UTF_8)
+//        val byteBuf = msg as ByteBuf
+//        req = ByteArray(byteBuf.readableBytes())
+//        byteBuf.readBytes(req)
+        val body = msg as String
         println("Server time is: $body; the counter is: ${++counter}")
     }
 
@@ -49,6 +48,6 @@ class ETimeClientHandler : ChannelHandlerAdapter() {
     }
 
     companion object {
-        private val logger = LoggerFactory.getLogger(ETimeClientHandler::class.java)
+        private val logger = LoggerFactory.getLogger(DecoderTimeClientHandler::class.java)
     }
 }
