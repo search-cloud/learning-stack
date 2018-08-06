@@ -24,8 +24,7 @@ class ETimeServerHandler : ChannelHandlerAdapter() {
         val body = String(req, Charsets.UTF_8)
                 .substring(0, req.size - separator.length)
 
-        counter++
-        println("The time server receive order: $body; the counter is: $counter")
+        println("The time server receive order: $body; the counter is: ${++counter}")
 
         val currentTime = when {
             "Query Time Order".equals(body, true) -> "${Date(System.currentTimeMillis())}$separator"

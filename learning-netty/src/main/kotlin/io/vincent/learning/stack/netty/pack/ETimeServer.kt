@@ -6,7 +6,6 @@ import io.netty.channel.ChannelOption
 import io.netty.channel.nio.NioEventLoopGroup
 import io.netty.channel.socket.SocketChannel
 import io.netty.channel.socket.nio.NioServerSocketChannel
-import io.vincent.learning.stack.netty.TimeServerHandler
 
 /**
  *
@@ -36,7 +35,7 @@ class ETimeServer {
 
     class ChildChannelHandler : ChannelInitializer<SocketChannel>() {
         override fun initChannel(ch: SocketChannel?) {
-            ch!!.pipeline().addLast(TimeServerHandler())
+            ch!!.pipeline().addLast(ETimeServerHandler())
         }
     }
 
