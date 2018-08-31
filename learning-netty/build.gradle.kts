@@ -52,6 +52,13 @@ dependencies {
     // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
     compile("org.hibernate.javax.persistence", "hibernate-jpa-2.1-api", "1.0.2.Final")
 
+    // protobuf
+    // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
+    compile("com.google.protobuf", "protobuf-java", "3.6.1")
+
+    // msgpack
+    // https://mvnrepository.com/artifact/org.msgpack/msgpack
+    compile("org.msgpack", "msgpack", "0.6.12")
 
     testCompile("junit", "junit", "4.12")
 }

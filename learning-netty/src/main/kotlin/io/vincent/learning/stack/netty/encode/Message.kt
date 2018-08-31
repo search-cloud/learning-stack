@@ -1,32 +1,28 @@
 package io.vincent.learning.stack.netty.encode
 
-import java.io.Serializable
 import java.nio.ByteBuffer
 import java.util.*
 
 /**
- * Created by Vincent on 2018/8/29.
+ * Created by Vincent on 2018/8/31.
  *
  * @author Vincent
- * @since 1.0, 2018/8/29
+ * @since 1.0, 2018/8/31
  */
-class Message(private val id: Long,
-              private val name: String,
-              private val age: Int,
-              private val birthDate: Date,
-              private val account: Double) : Serializable {
+@org.msgpack.annotation.Message
+class Message(private var id: Long? = null, private var name: String? = null, private var age: Int? = null, private var birthDate: Date? = null, private var account: Double? = null) {
 
     fun codeC(byteBuffer: ByteBuffer): ByteArray {
         byteBuffer.clear()
-        byteBuffer.putDouble(this.account)
-        byteBuffer.putLong(this.birthDate.time)
-        byteBuffer.putInt(this.age)
+        byteBuffer.putDouble(this.account!!)
+        byteBuffer.putLong(this.birthDate!!.time)
+        byteBuffer.putInt(this.age!!)
 
-        val bytes = this.name.toByteArray()
+        val bytes = this.name!!.toByteArray()
         byteBuffer.putInt(bytes.size)
         byteBuffer.put(bytes)
 
-        byteBuffer.putLong(this.id)
+        byteBuffer.putLong(this.id!!)
 
         byteBuffer.flip()
 
@@ -34,4 +30,5 @@ class Message(private val id: Long,
         byteBuffer.get(result)
         return result
     }
+
 }
