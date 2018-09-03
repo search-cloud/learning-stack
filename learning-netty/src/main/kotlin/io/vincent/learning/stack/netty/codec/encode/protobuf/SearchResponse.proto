@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package netty;
+
+option java_package = "io.vincent.learning.stack.netty.codec.encode.protobuf";
+option java_outer_classname = "SearchResponseProto";
+
+message ItemSearchResponse {
+  string query = 1;
+  string code = 2;
+  string message = 3;
+  int32 page_number = 4;
+  int32 page_size = 5;
+}
