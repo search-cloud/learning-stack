@@ -45,7 +45,7 @@ dependencies {
     // 用于与slf4j保持桥接
     compile("org.apache.logging.log4j", "log4j-slf4j-impl", log4jVersion)
 
-    // 4.1.25.Final
+    // 4.1.29.Final
     compile("io.netty","netty-all", "5.0.0.Alpha2")
 
     // JPA
@@ -59,6 +59,10 @@ dependencies {
     // msgpack
     // https://mvnrepository.com/artifact/org.msgpack/msgpack
     compile("org.msgpack", "msgpack", "0.6.12")
+
+    // marshall
+    compile("org.jboss.marshalling", "jboss-marshalling", "1.4.10.Final")
+    compile("org.jboss.marshalling", "jboss-marshalling-serial", "1.4.10.Final")
 
     testCompile("junit", "junit", "4.12")
 }
