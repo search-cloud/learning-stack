@@ -62,8 +62,8 @@ configure(allprojects) { project ->
     jar {
         manifest {
             attributes 'Created-By': "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})",
-            'Implementation-Title': project.name,
-            'Implementation-Version': project.version
+                    'Implementation-Title': project.name,
+                    'Implementation-Version': project.version
         }
         from("${rootProject.projectDir}/src/dist") {
             include "license.txt"
@@ -107,19 +107,19 @@ subprojects {
     }
 
     task sourcesJar(type: Jar, dependsOn: classes) {
-    classifier = 'sources'
-    from sourceSets.main.allSource
-    // don't include or exclude anything explicitly by default. See SPR-12085.
-}
+        classifier = 'sources'
+        from sourceSets.main.allSource
+        // don't include or exclude anything explicitly by default. See SPR-12085.
+    }
 
     task javadocJar(type: Jar) {
-    classifier = "javadoc"
-    from javadoc
-}
+        classifier = "javadoc"
+        from javadoc
+    }
 
     artifacts {
         archives sourcesJar
-                archives javadocJar
+        archives javadocJar
     }
 }
 
@@ -141,6 +141,7 @@ task wrapper(type: Wrapper) {
  *     from BUILD-SNAPSHOT => <TOPIC>-SNAPSHOT
  *     e.g. 3.2.1.BUILD-SNAPSHOT => 3.2.1.SPR-1234-SNAPSHOT
  */
+
 def qualifyVersionIfNecessary(version) {
     if (rootProject.hasProperty("BRANCH_NAME")) {
         def qualifier = rootProject.property("BRANCH_NAME")
