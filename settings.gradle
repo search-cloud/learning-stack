@@ -2,4 +2,4 @@ rootProject.name = 'learning-stack'
 
 include 'learning-netty'
 include 'learning-design-patterns'
-
+include 'learning-java-concurrency'

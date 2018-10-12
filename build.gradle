@@ -28,12 +28,7 @@ configure(allprojects) { project ->
     version = qualifyVersionIfNecessary(version)
 
     apply plugin: 'idea'
-    apply plugin: 'java'
-    apply plugin: 'kotlin'
-
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
-
+    
     ext {
         springBootVersion = '2.0.5.RELEASE'
         springVersion = '5.0.9.RELEASE'
@@ -54,25 +49,6 @@ configure(allprojects) { project ->
         maven { url "https://repo.spring.io/milestone" }
     }
 
-    sourceSets {
-        main.kotlin.srcDirs += 'src/main/java'
-    }
-
-    // noinspection GroovyAssignabilityCheck
-    jar {
-        manifest {
-            attributes 'Created-By': "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})",
-                    'Implementation-Title': project.name,
-                    'Implementation-Version': project.version
-        }
-        from("${rootProject.projectDir}/src/dist") {
-            include "license.txt"
-            include "notice.txt"
-            into "META-INF"
-            expand(copyright: new Date().format("yyyy"), version: project.version)
-        }
-    }
-
     idea {
         module {
             //if you hate browsing Javadoc
@@ -88,6 +64,13 @@ configure(allprojects) { project ->
  */
 subprojects {
     apply plugin: "io.spring.dependency-management"
+
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
 
     dependencyManagement {
         imports {
@@ -120,6 +103,25 @@ subprojects {
     artifacts {
         archives sourcesJar
         archives javadocJar
+    }
+
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/java'
+    }
+
+    // noinspection GroovyAssignabilityCheck
+    jar {
+        manifest {
+            attributes 'Created-By': "${System.getProperty("java.version")} (${System.getProperty("java.specification.vendor")})",
+                    'Implementation-Title': project.name,
+                    'Implementation-Version': project.version
+        }
+        from("${rootProject.projectDir}/src/dist") {
+            include "license.txt"
+            include "notice.txt"
+            into "META-INF"
+            expand(copyright: new Date().format("yyyy"), version: project.version)
+        }
     }
 }
 
