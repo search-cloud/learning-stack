@@ -1,0 +1,5 @@
+
+group 'io.vincent.learning.stack'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
