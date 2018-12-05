@@ -1,4 +1,4 @@
-package io.asion.concurrent
+package io.vincent.learning.stack.concurrency.operations
 
 import org.junit.runner.RunWith
 import org.junit.runners.Suite

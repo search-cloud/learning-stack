@@ -1,6 +1,5 @@
 package io.vincent.learning.stack.concurrency.overview
 
-import io.vincent.learning.stack.concurrency.overview.ThreadDemo
 import org.junit.Test
 
 /**
