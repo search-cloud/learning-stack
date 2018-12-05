@@ -22,9 +22,9 @@ import io.netty.channel.SimpleChannelInboundHandler
 import io.netty.handler.codec.http.DefaultFullHttpResponse
 import io.netty.handler.codec.http.FullHttpRequest
 import io.netty.handler.codec.http.FullHttpResponse
-import io.netty.handler.codec.http.HttpHeaderUtil.isKeepAlive
-import io.netty.handler.codec.http.HttpHeaderUtil.setContentLength
 import io.netty.handler.codec.http.HttpResponseStatus.BAD_REQUEST
+import io.netty.handler.codec.http.HttpUtil.isKeepAlive
+import io.netty.handler.codec.http.HttpUtil.setContentLength
 import io.netty.handler.codec.http.HttpVersion.HTTP_1_1
 import io.netty.handler.codec.http.websocketx.*
 import io.netty.util.CharsetUtil
@@ -39,7 +39,7 @@ class WebSocketServerHandler : SimpleChannelInboundHandler<Any>() {
 
     private var handshaker: WebSocketServerHandshaker? = null
 
-    public override fun messageReceived(ctx: ChannelHandlerContext, msg: Any) {
+    public override fun channelRead0(ctx: ChannelHandlerContext, msg: Any) {
         // 传统的HTTP接入
         if (msg is FullHttpRequest) {
             handleHttpRequest(ctx, msg)

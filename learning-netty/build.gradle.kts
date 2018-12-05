@@ -1,15 +1,23 @@
 
+plugins {
+    id("net.ltgt.apt") version "0.10"
+}
+
 repositories {
     mavenCentral()
 }
 
 var slf4jVersion = "1.7.25"
 var log4jVersion = "2.4.1"
-var lombokVersion = "1.16.22"
+var lombokVersion = "1.18.4"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.projectlombok:lombok:$lombokVersion")
+//    implementation("org.projectlombok:lombok:$lombokVersion")
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+
+//    apt("org.projectlombok:lombok:1.18.4")
 
     implementation("org.slf4j:jcl-over-slf4j:$slf4jVersion")
     implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
@@ -23,9 +31,9 @@ dependencies {
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
 
     // 4.1.29.Final
-//    implementation("io.netty:netty-all:4.1.29.Final")
+    implementation("io.netty:netty-all:4.1.29.Final")
     implementation("org.jctools:jctools-core:2.1.1")
-    implementation("io.netty:netty-all:5.0.0.Alpha2")
+//    implementation("io.netty:netty-all:5.0.0.Alpha2")
 
     // JPA
     // https://mvnrepository.com/artifact/org.hibernate.javax.persistence/hibernate-jpa-2.1-api
@@ -44,4 +52,14 @@ dependencies {
     implementation("org.jboss.marshalling:jboss-marshalling-serial:1.4.10.Final")
     // test
     testImplementation("junit:junit:4.12")
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
+kotlin {
+    sourceSets {
+    }
 }

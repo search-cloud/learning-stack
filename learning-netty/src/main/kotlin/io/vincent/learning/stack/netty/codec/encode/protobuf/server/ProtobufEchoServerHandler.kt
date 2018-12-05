@@ -1,7 +1,7 @@
 package io.vincent.learning.stack.netty.codec.encode.protobuf.server
 
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 import io.vincent.learning.stack.netty.codec.encode.protobuf.SearchRequestProto
 import io.vincent.learning.stack.netty.codec.encode.protobuf.SearchResponseProto
 
@@ -10,7 +10,7 @@ import io.vincent.learning.stack.netty.codec.encode.protobuf.SearchResponseProto
  * @author Vincent
  * @since 1.0, 2018/8/6
  */
-class ProtobufEchoServerHandler : ChannelHandlerAdapter() {
+class ProtobufEchoServerHandler : ChannelInboundHandlerAdapter() {
 
     override fun channelRead(ctx: ChannelHandlerContext, msg: Any) {
         val req = msg as SearchRequestProto.ItemSearchRequest

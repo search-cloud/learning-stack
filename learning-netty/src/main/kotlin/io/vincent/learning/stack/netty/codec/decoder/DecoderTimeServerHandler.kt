@@ -1,8 +1,8 @@
 package io.vincent.learning.stack.netty.codec.decoder
 
 import io.netty.buffer.Unpooled
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 import java.util.*
 
 /**
@@ -10,7 +10,7 @@ import java.util.*
  * @author Vincent.
  * @since 2018/08/06.
  */
-class DecoderTimeServerHandler : ChannelHandlerAdapter() {
+class DecoderTimeServerHandler : ChannelInboundHandlerAdapter() {
 
     private var counter: Int = 0
 

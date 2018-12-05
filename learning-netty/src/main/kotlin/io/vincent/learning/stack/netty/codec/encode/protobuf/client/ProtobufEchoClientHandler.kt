@@ -1,7 +1,7 @@
 package io.vincent.learning.stack.netty.codec.encode.protobuf.client
 
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 import io.vincent.learning.stack.netty.codec.encode.protobuf.SearchRequestProto
 import java.util.*
 
@@ -11,7 +11,7 @@ import java.util.*
  * @author Vincent
  * @since 1.0, 2018/8/6
  */
-class ProtobufEchoClientHandler : ChannelHandlerAdapter() {
+class ProtobufEchoClientHandler : ChannelInboundHandlerAdapter() {
 
     override fun channelActive(ctx: ChannelHandlerContext) {
         for (i in 1..10) {

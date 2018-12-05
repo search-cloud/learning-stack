@@ -2,8 +2,8 @@ package io.vincent.learning.stack.netty
 
 import io.netty.buffer.ByteBuf
 import io.netty.buffer.Unpooled
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 import org.slf4j.LoggerFactory
 
 /**
@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory
  * @author Asion.
  * @since 2018/6/24.
  */
-class TimeClientHandler : ChannelHandlerAdapter() {
+class TimeClientHandler : ChannelInboundHandlerAdapter() {
 
     private var firstMessage: ByteBuf
 

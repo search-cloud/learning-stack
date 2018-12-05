@@ -10,17 +10,16 @@ import org.msgpack.template.Templates
  */
 object MessagePackDemo {
 
-    fun encode(): ByteArray? {
-        val objList = arrayListOf("msgpack", "test", "study")
+    fun <T> encode(input: T): ByteArray {
         val messagePack = MessagePack()
         // serialize
-        return messagePack.write(objList)
+        return messagePack.write<T>(input)
     }
 
-    fun decode(byteArray: ByteArray): List<String>? {
+    fun decode(byteArray: ByteArray): List<String> {
 
         val messagePack = MessagePack()
         // deserialize
-        return messagePack.read<MutableList<String>?>(byteArray, Templates.tList(Templates.TString))
+        return messagePack.read(byteArray, Templates.tList(Templates.TString))
     }
 }

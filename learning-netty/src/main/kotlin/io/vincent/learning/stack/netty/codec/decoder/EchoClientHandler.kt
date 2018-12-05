@@ -1,8 +1,8 @@
 package io.vincent.learning.stack.netty.codec.decoder
 
 import io.netty.buffer.Unpooled
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 
 
 /**
@@ -10,7 +10,7 @@ import io.netty.channel.ChannelHandlerContext
  * @author Vincent
  * @since 1.0, 2018/8/6
  */
-class EchoClientHandler : ChannelHandlerAdapter() {
+class EchoClientHandler : ChannelInboundHandlerAdapter() {
     var counter: Int = 0
 
     override fun channelActive(ctx: ChannelHandlerContext?) {

@@ -1,15 +1,15 @@
 package io.vincent.learning.stack.netty.codec.decoder
 
 import io.netty.buffer.Unpooled
-import io.netty.channel.ChannelHandlerAdapter
 import io.netty.channel.ChannelHandlerContext
+import io.netty.channel.ChannelInboundHandlerAdapter
 
 /**
  * Created by Vincent on 2018/8/6.
  * @author Vincent
  * @since 1.0, 2018/8/6
  */
-class EchoServerHandler : ChannelHandlerAdapter() {
+class EchoServerHandler : ChannelInboundHandlerAdapter() {
 
     var counter: Int = 0
 
