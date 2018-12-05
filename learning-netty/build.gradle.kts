@@ -19,17 +19,6 @@ dependencies {
 
 //    apt("org.projectlombok:lombok:1.18.4")
 
-    implementation("org.slf4j:jcl-over-slf4j:$slf4jVersion")
-    implementation("org.slf4j:jul-to-slf4j:$slf4jVersion")
-//    implementation("org.slf4j:log4j-over-slf4j:${slf4jVersion}")
-    implementation("org.slf4j:slf4j-api:$slf4jVersion")
-//    implementation("org.slf4j:slf4j-jdk14:${slf4jVersion}")
-//    implementation("org.slf4j:slf4j-log4j12:${slf4jVersion}")
-    implementation("org.apache.logging.log4j:log4j-api:$log4jVersion")
-    implementation("org.apache.logging.log4j:log4j-core:$log4jVersion")
-    // 用于与slf4j保持桥接
-    implementation("org.apache.logging.log4j:log4j-slf4j-impl:$log4jVersion")
-
     // 4.1.29.Final
     implementation("io.netty:netty-all:4.1.29.Final")
     implementation("org.jctools:jctools-core:2.1.1")
@@ -50,8 +39,6 @@ dependencies {
     // marshall
     implementation("org.jboss.marshalling:jboss-marshalling:1.4.10.Final")
     implementation("org.jboss.marshalling:jboss-marshalling-serial:1.4.10.Final")
-    // test
-    testImplementation("junit:junit:4.12")
 }
 
 java {

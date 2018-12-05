@@ -40,6 +40,11 @@ dependencies {
 //    testImplementation("org.jetbrains.kotlin:kotlin-test-junit")
 }
 
+var slf4jVersion = "1.7.25"
+var log4jVersion = "2.4.1"
+var logbackVersion = "1.2.3"
+var lombokVersion = "1.18.4"
+
 /**
  * Sub projects configuration.
  */
@@ -52,7 +57,13 @@ configure(subprojects) {
         "implementation"("org.jetbrains.kotlin:kotlin-reflect")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit")
-        "testImplementation"("junit:junit:4.12")
+
+        "implementation"("org.slf4j:slf4j-api:$slf4jVersion")
+        "implementation"("org.slf4j:jcl-over-slf4j:$slf4jVersion")
+        "implementation"("org.slf4j:jul-to-slf4j:$slf4jVersion")
+        "implementation"("ch.qos.logback:logback-classic:$logbackVersion")
+        "implementation"("ch.qos.logback:logback-core:$logbackVersion")
+//        "testImplementation"("junit:junit:4.12")
     }
 
     val compileKotlin: KotlinCompile by tasks
