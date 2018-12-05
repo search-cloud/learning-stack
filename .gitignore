@@ -138,3 +138,5 @@ log/
 /data/
 /index/
 .sts4-cache/
+
+*.lock
