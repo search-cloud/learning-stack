@@ -1,3 +1,4 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 /**
  * This project's plugins.
@@ -15,8 +16,7 @@ plugins {
  */
 allprojects {
     group = "io.vincent.learning.stack"
-    version = 1.0
-//    rootProject.version = qualifyVersionIfNecessary(rootProject.version)
+    version = qualifyVersionIfNecessary(rootProject.version as String)
 
     apply(plugin = "idea")
 
@@ -54,6 +54,16 @@ configure(subprojects) {
         "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit")
         "testImplementation"("junit:junit:4.12")
     }
+
+    val compileKotlin: KotlinCompile by tasks
+    compileKotlin.kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    val compileJava: JavaCompile by tasks
+    compileJava.sourceCompatibility = "1.8"
+    compileJava.targetCompatibility = "1.8"
+
 }
 
 /*
@@ -63,12 +73,11 @@ configure(subprojects) {
  *     from BUILD-SNAPSHOT => <TOPIC>-SNAPSHOT
  *     e.g. 3.2.1.BUILD-SNAPSHOT => 3.2.1.SPR-1234-SNAPSHOT
  */
-
-fun qualifyVersionIfNecessary(version: java.lang.String): java.lang.String {
+fun qualifyVersionIfNecessary(version: String): String {
     if (rootProject.hasProperty("BRANCH_NAME")) {
-        val qualifier = rootProject.property("BRANCH_NAME") as java.lang.String
+        val qualifier = rootProject.property("BRANCH_NAME") as String
         if (qualifier.startsWith("SPR-")) {
-            return version.replace("BUILD", qualifier) as java.lang.String
+            return version.replace("BUILD", qualifier)
         }
     }
     return version
