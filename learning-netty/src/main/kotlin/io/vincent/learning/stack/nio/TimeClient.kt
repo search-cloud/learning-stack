@@ -12,12 +12,7 @@ object TimeClient {
     fun main(args: Array<String>) {
         var port = 8080
         if (args.isNotEmpty()) {
-            try {
-                port = Integer.valueOf(args[0])
-            } catch (e: NumberFormatException) {
-                //
-            }
-
+            port = Integer.valueOf(args[0])
         }
         val threadPool = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors() * 2)
 //        Thread(TimeClientHandler("127.0.0.1", port), "TimeClient-001").start()

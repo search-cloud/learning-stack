@@ -67,18 +67,22 @@ class TimeClientHandler(private val host: String, private val port: Int, name: S
             if (key.isReadable) {
                 val readBuffer = ByteBuffer.allocate(1024)
                 val readBytes = channel.read(readBuffer)
-                if (readBytes > 0) {
-                    readBuffer.flip()
-                    val bytes = ByteArray(readBuffer.remaining())
-                    readBuffer.get(bytes)
-                    val body = String(bytes, Charsets.UTF_8)
-                    logger.info("Server time is: $body, Client: $name")
-                    this.stop = true
-                } else if (readBytes < 0) {
-                    key.cancel()
-                    channel.close()
-                } else {
-                    // ignore zero byte
+                when {
+                    readBytes > 0 -> {
+                        readBuffer.flip()
+                        val bytes = ByteArray(readBuffer.remaining())
+                        readBuffer.get(bytes)
+                        val body = String(bytes, Charsets.UTF_8)
+                        logger.info("Server time is: $body, Client: $name")
+                        this.stop = true
+                    }
+                    readBytes < 0 -> {
+                        key.cancel()
+                        channel.close()
+                    }
+                    else -> {
+                        // ignore zero byte
+                    }
                 }
             }
         }
