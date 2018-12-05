@@ -7,8 +7,6 @@ repositories {
     mavenCentral()
 }
 
-var slf4jVersion = "1.7.25"
-var log4jVersion = "2.4.1"
 var lombokVersion = "1.18.4"
 
 dependencies {
