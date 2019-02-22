@@ -10,7 +10,7 @@ import kotlin.collections.HashMap
  * @author Vincent
  * @since 1.0, 1/23/19
  */
-class SimpleLRUCache<K : Serializable, V : Serializable> {
+class SimpleLRUCache<K : Serializable, V : Serializable>(var capacity: Int = 4) {
 
     /**
      * Cache Linked Node.
@@ -42,11 +42,6 @@ class SimpleLRUCache<K : Serializable, V : Serializable> {
 
     private var head: Node<K, V>? = null
     private var tail: Node<K, V>? = null
-    var size: Int = 4
-        private set(value) {
-            field = value
-        }
-
 
     /**
      * Add element to cache.
@@ -71,7 +66,7 @@ class SimpleLRUCache<K : Serializable, V : Serializable> {
              */
             val newNode = Node(key, value)
             // Queue table fulled, delete tail element, then add to head.
-            if (queueTable.size >= size) {
+            if (queueTable.size >= capacity) {
                 queueTable.remove(tail!!.key)
                 remove(tail!!)
                 add(newNode)

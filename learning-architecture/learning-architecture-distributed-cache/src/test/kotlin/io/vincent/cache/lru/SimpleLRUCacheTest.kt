@@ -1,6 +1,7 @@
 package io.vincent.cache.lru
 
 import org.junit.Test
+import kotlin.test.assertEquals
 
 /**
  * Least Recently Used Cache Test.
@@ -22,12 +23,26 @@ class SimpleLRUCacheTest {
         lruCache.add(18, 18)
         lruCache.add(13, 13)
 
-        println(lruCache.get(1))
-        println(lruCache.get(10))
-        println(lruCache.get(15))
-        println(lruCache.get(12))
-        println(lruCache.get(18))
-        println(lruCache.get(13))
+        val value0 = lruCache.get(1)
+        val value1 = lruCache.get(10)
+        val value2 = lruCache.get(15)
+        val value3 = lruCache.get(12)
+        val value4 = lruCache.get(18)
+        val value5 = lruCache.get(13)
+
+        println(value0)
+        println(value1)
+        println(value2)
+        println(value3)
+        println(value4)
+        println(value5)
+
+        assertEquals(null, value0)
+        assertEquals(10, value1)
+        assertEquals(null, value2)
+        assertEquals(12, value3)
+        assertEquals(18, value4)
+        assertEquals(13, value5)
 
     }
 }
