@@ -14,10 +14,14 @@ class JoinDemoTest {
     fun join() {
         val r1 = JoinDemo("Thread-1")
         val thread = Thread(r1, "Thread-1")
-        r1.start(thread)
-
         val r2 = JoinDemo("Thread-2")
+
+        r1.start(thread)
         r2.start()
+
+        for (i in 10 downTo 1) {
+            println("Thread: main" + Thread.currentThread().id + ", " + i)
+        }
 
         r1.join()
         r2.join()
@@ -26,7 +30,7 @@ class JoinDemoTest {
             println("Thread: main" + Thread.currentThread().id + ", " + i)
         }
 
-        println("Thread main" + Thread.currentThread().id + " finish.")
+        println("Thread main" + Thread.currentThread().id + " finished.")
     }
 
 }

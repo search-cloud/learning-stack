@@ -29,10 +29,10 @@ public class JoinDemo implements Runnable {
     @Override
     public void run() {
         System.out.println("Running " + threadName);
-        for (int i = 10; i > 0; i--) {
+        for (int i = 10000; i > 0; i--) {
             System.out.println("Thread: " + threadName + ", " + i);
         }
-        System.out.println("Thread " + threadName + " exiting.");
+        System.out.println("Thread " + threadName + " finished.");
     }
 
     /**
