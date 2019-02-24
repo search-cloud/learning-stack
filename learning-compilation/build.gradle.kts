@@ -14,6 +14,5 @@ java {
 }
 
 kotlin {
-    sourceSets {
-    }
+
 }
