@@ -140,3 +140,6 @@ log/
 .sts4-cache/
 
 *.lock
+
+venv
+nettybook2
