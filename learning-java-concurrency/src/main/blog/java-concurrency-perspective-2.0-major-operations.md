@@ -1,30 +1,37 @@
 ---
-title: Java Concurrency Perspective Major Operations (二)  </br> Java 并发透视之主要操作（二）
-date: 2017-03-24 12:07:01
-categories: [java, concurrency]
-tags: [java, concurrency]
+title: Java Concurrency Perspective Major Operations (二) </br> Java 并发透视之主要操作
+date: 2017-08-17 14:0:01
+categories: [Java, Concurrency]
+tags: [Java, Concurrency]
 ---
+
+- [Java 并发透视之主要操作（二）](#java-%E5%B9%B6%E5%8F%91%E9%80%8F%E8%A7%86%E4%B9%8B%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E4%BA%8C)
+  - [Java 多线程的主要操作概览](#java-%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%9A%84%E4%B8%BB%E8%A6%81%E6%93%8D%E4%BD%9C%E6%A6%82%E8%A7%88)
+  - [sleep()](#sleep)
+  - [setPriority(int) & getPriority()](#setpriorityint--getpriority)
+  - [yield()](#yield)
+  - [join()](#join)
+  - [wait() & notify()/notifyAll()](#wait--notifynotifyall)
 
 # Java 并发透视之主要操作（二）
 
+## Java 多线程的主要操作概览
 
-## java 多线程的主要操作
-
-|方法|简介|
-|:----:|:----|
-|**sleep(long)**|该方法使当前线程睡眠一定时间，单位为毫秒（ms）|
-|**getPriority()**|该方法可以获取线程的优先级|
-|**setPriority(int)**|该方法设置线程的优先级，但是并不能保证按这个优先级优先运行|
-|**yield()**|该方法让出CUP资源，让其他线程先执行|
-|**join()**|该方法合并一个线程到当前线程|
-|**wait()**|当前线程等待其他线程调用notify()后才会继续运行|
-|**notify()**|该方法唤醒一个等待中的线程|
-|**notifyAll()**|该方法所有正在等待的线程|
+|         方法          | 简介                                                 |
+|:--------------------:|:----------------------------------------------------|
+|   **sleep(long)**    | 该方法使当前线程睡眠一定时间，单位为毫秒（ms）            |
+|  **getPriority()**   | 该方法可以获取线程的优先级                             |
+| **setPriority(int)** | 该方法设置线程的优先级，但是并不能保证按这个优先级优先运行 |
+|     **yield()**      | 该方法让出CUP资源，让其他线程先执行                     |
+|      **join()**      | 该方法合并一个线程到当前线程                            |
+|      **wait()**      | 当前线程等待其他线程调用notify()后才会继续运行           |
+|     **notify()**     | 该方法唤醒一个等待中的线程                             |
+|   **notifyAll()**    | 该方法所有正在等待的线程                               |
 
 ## sleep()
 该方法使当前线程睡眠一定时间，单位为毫秒（ms）
 还是上一节的例子，但是我们在run()方法的循环体中添加了 Thread.sleep(50); 语句。
-这样输出的结果就是，Thread-1：倒计时一次，Thread-2：倒计时一次。
+这样输出的结果就是，Thread-1：倒计时一次，然后，Thread-2：倒计时一次。
 ```
 Creating Thread-1
 Starting Thread-1
@@ -57,8 +64,9 @@ Thread Thread-1 exiting.
 ```
 {% note danger %}
 因为，循环每执行一次，线程就睡眠50毫秒，所以，使得倒计时比较均匀。
+Thread-1倒计时一次，然后，Thread-2倒计时一次。
 {% endnote %}
-例子：
+demo code：
 
 ```java
 package io.asion.concurrent;
@@ -97,6 +105,7 @@ class RunnableDemo implements Runnable {
         try {
             for (int i = 10; i > 0; i--) {
                 System.out.println("Thread: " + threadName + ", " + i);
+                // Let the thread sleep for a while.
                 Thread.sleep(50);
             }
         } catch (InterruptedException e) {
@@ -132,8 +141,10 @@ public class TestRunnableSleep {
 ```
 
 ## setPriority(int) & getPriority()
+{% note danger %}
 **getPriority()**方法可以获取该线程的优先级
 __setPriority(int)__方法设置线程的优先级，但是JVM并不能保证按这个优先级优先运行
+{% endnote %}
 
 ```java
 package io.asion.concurrent;
@@ -273,7 +284,7 @@ class YieldDemo implements Runnable {
         System.out.println("Running " + threadName);
         for (int i = 10; i > 0; i--) {
             System.out.println("Thread: " + threadName + ", " + i);
-            // 只要碰到10的倍数就让给其他线程执行
+            // 只要碰到2的倍数就让给其他线程执行
             if (i % 2 == 0) {
                 Thread.yield();
                 System.out.println("Thread: " + threadName + ", yield");
@@ -491,3 +502,6 @@ Thread main1 finish.
 
 ## wait() & notify()/notifyAll()
 
+详见下一篇文章 [Java并发透视之线程间通信](/posts/java/concurrency/java-concurrency-perspective-003-inter-threads-communication.html)
+
+笔者毕竟能力有限，难免有疏漏，如果，大家发现文章有何错误，请不吝赐教。谢谢！
