@@ -6,15 +6,10 @@ package io.vincent.learning.stack.algorithm.linked
  * @author Vincent
  * @since 1.0, 1/23/19
  */
-class SinglyLinkedList<T> {
+open class SinglyLinkedList<T> {
 
-    /**
-     * Node.
-     */
-    private inner class Node(var data: T? = null, var next: Node? = null)
-
-    private var head: Node? = null
-    private var tail: Node? = null
+    private var head: Node<T>? = null
+    private var tail: Node<T>? = null
     var size: Int = 0
         private set(value) {
             field = value
@@ -57,7 +52,7 @@ class SinglyLinkedList<T> {
         }
 
         // 存放需要删除的节点
-        val del: Node?
+        val del: Node<T>?
         if (index == 0) {
             del = head
             head = head!!.next
@@ -72,7 +67,11 @@ class SinglyLinkedList<T> {
         return del?.data
     }
 
-    private fun getNodeByIndex(index: Int): Node? {
+    fun head(): Node<T>? {
+        return head
+    }
+
+    private fun getNodeByIndex(index: Int): Node<T>? {
         if (index < 0 || index >= size) {
             throw IndexOutOfBoundsException()
         }
