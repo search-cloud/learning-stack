@@ -1,0 +1,31 @@
+package io.vincent.compiler.c.ast;
+
+import io.vincent.compiler.c.type.Type;
+import io.vincent.compiler.c.type.TypeRef;
+import io.vincent.compiler.c.type.UnionType;
+
+import java.util.List;
+
+public class UnionNode extends CompositeTypeDefinition {
+    public UnionNode(Location loc, TypeRef ref, String name, List<Slot> membs) {
+        super(loc, ref, name, membs);
+    }
+
+    public String kind() {
+        return "union";
+    }
+
+    public boolean isUnion() {
+        return true;
+    }
+
+    // #@@range/definingType{
+    public Type definingType() {
+        return new UnionType(name(), members(), location());
+    }
+    // #@@}
+
+    public <T> T accept(DeclarationVisitor<T> visitor) {
+        return visitor.visit(this);
+    }
+}

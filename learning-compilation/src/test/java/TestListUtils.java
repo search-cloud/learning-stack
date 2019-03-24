@@ -4,7 +4,7 @@ import org.junit.runner.JUnitCore;
 import java.util.ArrayList;
 import java.util.List;
 
-import static io.vincent.compiler.utils.ListUtils.reverse;
+import static io.vincent.compiler.c.utils.ListUtils.reverse;
 import static org.junit.Assert.assertEquals;
 
 

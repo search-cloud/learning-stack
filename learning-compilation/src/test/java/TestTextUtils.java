@@ -1,8 +1,8 @@
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import static io.vincent.compiler.utils.TextUtils.dumpString;
-import static io.vincent.compiler.utils.TextUtils.isPrintable;
+import static io.vincent.compiler.c.utils.TextUtils.dumpString;
+import static io.vincent.compiler.c.utils.TextUtils.isPrintable;
 import static org.junit.Assert.*;
 
 

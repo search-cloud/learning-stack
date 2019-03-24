@@ -1,7 +1,7 @@
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
-import static io.vincent.compiler.utils.AsmUtils.align;
+import static io.vincent.compiler.c.utils.AsmUtils.align;
 import static org.junit.Assert.assertEquals;
 
 

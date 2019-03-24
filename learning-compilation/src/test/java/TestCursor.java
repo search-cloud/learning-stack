@@ -1,4 +1,4 @@
-import io.vincent.compiler.utils.Cursor;
+import io.vincent.compiler.c.utils.Cursor;
 import org.junit.Test;
 import org.junit.runner.JUnitCore;
 
