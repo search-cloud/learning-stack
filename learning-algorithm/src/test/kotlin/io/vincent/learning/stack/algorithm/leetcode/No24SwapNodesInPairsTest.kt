@@ -1,5 +1,7 @@
 package io.vincent.learning.stack.algorithm.leetcode
 
+import io.vincent.learning.stack.algorithm.leetcode.LinkedListUtils.buildLinkedList
+import io.vincent.learning.stack.algorithm.leetcode.LinkedListUtils.printList
 import org.junit.Test
 
 /**
@@ -49,22 +51,30 @@ class No24SwapNodesInPairsTest {
         printList(node)
     }
 
-    private fun buildLinkedList(n: Int): LinkedList {
-        val list = LinkedList()
+    @Test
+    fun swapPairs22() {
+        val list = buildLinkedList(3)
 
-        for (i in 1..n) {
-            list.add(i)
-        }
+        val head = list.head()
+        println("before reverse: $head")
+        printList(head)
 
-        return list
+        val node = No24SwapNodesInPairs.swapPairs1(list.head())
+        println("after reverse: $node")
+        printList(node)
     }
 
-    private fun printList(head: ListNode?) {
-        var node = head
-        while (node != null) {
-            print("${node.value}->")
-            node = node.next
-        }
-        println("NULL")
+    @Test
+    fun swapPairs23() {
+        val list = buildLinkedList(8)
+
+        val head = list.head()
+        println("before reverse: $head")
+        printList(head)
+
+        val node = No24SwapNodesInPairs.swapPairs1(list.head())
+        println("after reverse: $node")
+        printList(node)
     }
+
 }

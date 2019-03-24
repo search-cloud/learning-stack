@@ -26,11 +26,11 @@ object No24SwapNodesInPairs {
 
         val newHead = p2
 
-        while (p1 != null) {
-            val temp: ListNode? = p2?.next
+        while (p1 != null && p2 != null) {
             val prev: ListNode? = p1
+            val temp: ListNode? = p2.next
 
-            p2?.next = p1
+            p2.next = p1
             p1.next = temp
 
             p1 = temp
@@ -41,6 +41,29 @@ object No24SwapNodesInPairs {
                 prev?.next = p1
             }
 
+        }
+
+        return newHead
+    }
+
+    fun swapPairs1(head: ListNode?): ListNode? {
+        if (head?.next == null) {
+            return head
+        }
+
+        var pre: ListNode? = ListNode(-1)
+        pre?.next = head
+        val newHead = head.next
+
+        while(pre?.next != null && pre?.next?.next != null) {
+            val p1 = pre.next
+            val p2 = p1?.next
+
+            p1?.next = p2?.next
+            p2?.next = p1
+            pre.next = p2
+
+            pre = p1
         }
 
         return newHead

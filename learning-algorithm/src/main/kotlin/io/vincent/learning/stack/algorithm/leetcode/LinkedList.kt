@@ -29,8 +29,8 @@ open class LinkedList {
     /**
      * add to last.
      */
-    fun add(e: Int) {
-        val newNode = ListNode(e, null)
+    fun add(v: Int) {
+        val newNode = ListNode(v, null)
         if (head == null) {
             head = newNode
             tail = head
@@ -40,6 +40,22 @@ open class LinkedList {
         }
         size++
     }
+
+    /**
+     * add to last.
+     */
+    fun add(e: ListNode) {
+        if (head == null) {
+            head = e
+            tail = head
+        } else {
+            tail!!.next = e
+            tail = e
+        }
+        size++
+    }
+
+
 
     fun get(index: Int): Int? {
         return getNodeByIndex(index)?.value
@@ -69,6 +85,10 @@ open class LinkedList {
 
     fun head(): ListNode? {
         return head
+    }
+
+    fun tail(): ListNode? {
+        return tail
     }
 
     private fun getNodeByIndex(index: Int): ListNode? {
