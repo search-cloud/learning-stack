@@ -11,7 +11,7 @@ import org.jetbrains.annotations.Contract
  * @author Vincent
  * @since 1.0, 2019/3/23
  */
-object ReverseLinkedList {
+object No206ReverseLinkedList {
 
     @Contract("null -> null")
     fun <T> reverse(head: Node<T>?): Node<T>? {

@@ -5,12 +5,20 @@ import org.junit.Test
 import kotlin.test.assertEquals
 
 /**
- * Created by Vincent on 2019/3/24.
+ * Reverse a singly linked list.
+ *
+ * Example:
+ *
+ * Input: 1->2->3->4->5->NULL
+ * Output: 5->4->3->2->1->NULL
+ * Follow up:
+ *
+ * A linked list can be reversed either iteratively or recursively. Could you implement both?
  *
  * @author Vincent
  * @since 1.0, 2019/3/24
  */
-class ReverseLinkedListTest {
+class No206ReverseLinkedListTest {
 
     @Test
     fun reverse() {
@@ -24,7 +32,7 @@ class ReverseLinkedListTest {
             println(list.get(i))
         }
 
-        var node = ReverseLinkedList.reverse(list.head())
+        var node = No206ReverseLinkedList.reverse(list.head())
         assertEquals(10, node?.data)
         println("after reverse: $node")
         while (node?.next != null) {
