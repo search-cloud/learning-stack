@@ -1,0 +1,38 @@
+package io.vincent.learning.stack.algorithm.leetcode;
+
+import io.vincent.learning.stack.algorithm.leetcode.tree.TreeNode;
+
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
+
+/**
+ * Created by Vincent on 2019/3/25.
+ *
+ * @author Vincent
+ * @since 1.0, 2019/3/25
+ */
+public class No144TreePreorderTraversal {
+
+    public List<Integer> preorderTraversal(TreeNode root) {
+        ArrayList<Integer> result = new ArrayList<>();
+
+        if (root == null) return result;
+
+        Deque<TreeNode> stack = new LinkedList<>();
+        stack.push(root);
+
+        while (!stack.isEmpty()) {
+            TreeNode node = stack.pop();
+            result.add(node.val);
+
+            if (node.right != null)
+                stack.push(node.right);
+            if (node.left != null)
+                stack.push(node.left);
+        }
+
+        return result;
+    }
+}
