@@ -13,6 +13,18 @@ import org.jetbrains.annotations.Contract
  */
 object No206ReverseLinkedList {
 
+    /**
+     * Approach #1 (Iterative)
+     *    Assume that we have linked list 1 → 2 → 3 → Ø, we would like to change it to Ø ← 1 ← 2 ← 3.
+     *
+     *    While you are traversing the list, change the current node's next pointer to point to its previous element. Since a node does not have reference to its previous node, you must store its previous element beforehand. You also need another pointer to store the next node before changing the reference. Do not forget to return the new head reference at the end!
+     *
+     *    Complexity analysis
+     *
+     *    Time complexity : O(n)O(n). Assume that nn is the list's length, the time complexity is O(n)O(n).
+     *
+     *    Space complexity : O(1)O(1).
+     */
     @Contract("null -> null")
     fun reverse(head: ListNode?): ListNode? {
         if (head?.next == null) {
