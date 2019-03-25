@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.algorithm.linked
+package io.vincent.learning.stack.algorithm.leetcode.linked
 
 /**
  * One way linked list.
@@ -6,10 +6,10 @@ package io.vincent.learning.stack.algorithm.linked
  * @author Vincent
  * @since 1.0, 1/23/19
  */
-open class SinglyLinkedList<T> {
+open class LinkedList {
 
-    private var head: Node<T>? = null
-    private var tail: Node<T>? = null
+    private var head: ListNode? = null
+    private var tail: ListNode? = null
     var size: Int = 0
         private set(value) {
             field = value
@@ -18,8 +18,8 @@ open class SinglyLinkedList<T> {
     /**
      * add to head.
      */
-    fun addToHead(e: T?) {
-        head = Node(e, head)
+    fun addToHead(e: Int) {
+        head = ListNode(e, head)
         if (tail == null) {
             tail = head
         }
@@ -29,8 +29,8 @@ open class SinglyLinkedList<T> {
     /**
      * add to last.
      */
-    fun add(e: T?) {
-        val newNode = Node(e, null)
+    fun add(v: Int) {
+        val newNode = ListNode(v, null)
         if (head == null) {
             head = newNode
             tail = head
@@ -41,18 +41,34 @@ open class SinglyLinkedList<T> {
         size++
     }
 
-    fun get(index: Int): T? {
-        return getNodeByIndex(index)?.data
+    /**
+     * add to last.
+     */
+    fun add(e: ListNode) {
+        if (head == null) {
+            head = e
+            tail = head
+        } else {
+            tail!!.next = e
+            tail = e
+        }
+        size++
     }
 
-    fun remove(index: Int): T? {
+
+
+    fun get(index: Int): Int? {
+        return getNodeByIndex(index)?.value
+    }
+
+    fun remove(index: Int): Int? {
         if (index < 0 || index >= size) {
             println("index: $index")
             throw IndexOutOfBoundsException()
         }
 
         // 存放需要删除的节点
-        val del: Node<T>?
+        val del: ListNode?
         if (index == 0) {
             del = head
             head = head!!.next
@@ -64,14 +80,18 @@ open class SinglyLinkedList<T> {
         }
         size--
 
-        return del?.data
+        return del?.value
     }
 
-    fun head(): Node<T>? {
+    fun head(): ListNode? {
         return head
     }
 
-    private fun getNodeByIndex(index: Int): Node<T>? {
+    fun tail(): ListNode? {
+        return tail
+    }
+
+    private fun getNodeByIndex(index: Int): ListNode? {
         if (index < 0 || index >= size) {
             throw IndexOutOfBoundsException()
         }
@@ -96,7 +116,7 @@ open class SinglyLinkedList<T> {
 
         var current = head
         while (current != null) {
-            sb.append("${current.data}, ")
+            sb.append("${current.value}, ")
             current = current.next
         }
 
