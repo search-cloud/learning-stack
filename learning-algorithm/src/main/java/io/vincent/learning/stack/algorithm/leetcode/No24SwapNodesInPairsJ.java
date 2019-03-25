@@ -1,5 +1,7 @@
 package io.vincent.learning.stack.algorithm.leetcode;
 
+import io.vincent.learning.stack.algorithm.leetcode.linked.ListNode;
+
 /**
  * Created by Vincent on 2019/3/24.
  *

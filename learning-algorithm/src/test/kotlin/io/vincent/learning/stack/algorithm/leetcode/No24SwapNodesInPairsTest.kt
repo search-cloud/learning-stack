@@ -1,7 +1,7 @@
 package io.vincent.learning.stack.algorithm.leetcode
 
-import io.vincent.learning.stack.algorithm.leetcode.LinkedListUtils.buildLinkedList
-import io.vincent.learning.stack.algorithm.leetcode.LinkedListUtils.printList
+import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils.buildLinkedList
+import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils.printList
 import org.junit.Test
 
 /**

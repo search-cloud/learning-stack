@@ -4,7 +4,7 @@ import io.vincent.learning.stack.algorithm.linked.Node
 import org.jetbrains.annotations.Contract
 
 /**
- * Reverse linked List.
+ * Reverse linked List. (Iteratively)
  * </p>
  * https://leetcode.com/problems/reverse-linked-list/
  *

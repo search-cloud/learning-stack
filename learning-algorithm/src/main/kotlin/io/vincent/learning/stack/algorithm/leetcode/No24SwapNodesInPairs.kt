@@ -1,5 +1,7 @@
 package io.vincent.learning.stack.algorithm.leetcode
 
+import io.vincent.learning.stack.algorithm.leetcode.linked.ListNode
+
 /**
  * Swap Nodes in Pairs.
  * </p>

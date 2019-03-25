@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.algorithm.leetcode
+package io.vincent.learning.stack.algorithm.leetcode.linked
 
 /**
  * One way linked list.

@@ -1,5 +1,6 @@
 package io.vincent.learning.stack.algorithm.leetcode;
 
+import io.vincent.learning.stack.algorithm.leetcode.linked.ListNode;
 import org.jetbrains.annotations.Contract;
 
 import java.util.HashSet;
@@ -23,9 +24,9 @@ import java.util.Set;
  *        \--------
  *
  *  ``````       ``````       ```````       ```````
- * `  3   `---->`  2   `---->`   0   `---->`   4.  `
+ * `  3   `---->`  2   `---->`   0   `---->`   4   `
  * `  `   `     `  `   `     `   `   `     `   `   `
- *  ``````       ``````       ``````         ``````
+ *  ``````       ``````       ```````       ```````
  *                 ^                            `
  *                  ``                         ``
  *                    ```                    ```
