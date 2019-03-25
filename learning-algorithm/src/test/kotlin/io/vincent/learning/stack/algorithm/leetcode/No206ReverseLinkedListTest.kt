@@ -1,6 +1,7 @@
 package io.vincent.learning.stack.algorithm.leetcode
 
-import io.vincent.learning.stack.algorithm.linked.SinglyLinkedList
+import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedList
+import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils
 import org.junit.Test
 import kotlin.test.assertEquals
 
@@ -22,7 +23,7 @@ class No206ReverseLinkedListTest {
 
     @Test
     fun reverse() {
-        val list = SinglyLinkedList<Int>()
+        val list = LinkedList()
 
         for (i in 0..10) {
             list.add(i)
@@ -33,11 +34,25 @@ class No206ReverseLinkedListTest {
         }
 
         var node = No206ReverseLinkedList.reverse(list.head())
-        assertEquals(10, node?.data)
+        assertEquals(10, node?.value)
         println("after reverse: $node")
         while (node?.next != null) {
-            println(node.data)
+            println(node.value)
             node = node.next
         }
+    }
+
+    @Test
+    fun recursivelyReverse() {
+        val list = LinkedListUtils.buildLinkedList(4)
+
+        val head = list.head()
+        println("before reverse: $head")
+        LinkedListUtils.printList(head)
+
+        val node = No206ReverseLinkedList.recursivelyReverse(list.head())
+        assertEquals(4, node?.value)
+        println("after reverse: $node")
+        LinkedListUtils.printList(node)
     }
 }

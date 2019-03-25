@@ -7,10 +7,10 @@ package io.vincent.learning.stack.algorithm.leetcode.linked;
  * @since 1.0, 2019/3/24
  */
 public class ListNode {
-    int value;
-    ListNode next;
+    public int value;
+    public ListNode next;
 
-    ListNode(int value) {
+    public ListNode(int value) {
         this.value = value;
         this.next = null;
     }
