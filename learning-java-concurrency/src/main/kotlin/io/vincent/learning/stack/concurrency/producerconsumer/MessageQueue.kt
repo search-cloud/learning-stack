@@ -32,7 +32,7 @@ class MessageQueue {
         notifyAll()
 
         // Makes the working of program easier to  understand
-//        Thread.sleep(1000)
+        Thread.sleep(1000)
     }
 
     @Synchronized
@@ -52,7 +52,7 @@ class MessageQueue {
         notifyAll()
 
         // And sleep
-//        Thread.sleep(1000)
+        Thread.sleep(1000)
 
         return message
     }
