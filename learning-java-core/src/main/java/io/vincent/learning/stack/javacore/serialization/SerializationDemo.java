@@ -29,6 +29,19 @@ public class SerializationDemo {
         System.out.println("name = " + deserialize1.name);
         System.out.println("age = " + deserialize1.age);
 
+        Emp empWithDemo = new Emp("Serialization Demo", 10,1, 100);
+        empWithDemo.demo = demo;
+        String fileNameEmp = "emp2.ser";
+        serialize(empWithDemo, fileNameEmp);
+
+        Emp deserialize2 = deserialize(fileNameEmp);
+        System.out.println("t = " + deserialize2.t);
+        System.out.println("s = " + deserialize2.s);
+        System.out.println("name = " + deserialize2.name);
+        System.out.println("age = " + deserialize2.age);
+        System.out.println("demo.a = " + deserialize2.demo.a);
+        System.out.println("demo.b = " + deserialize2.demo.b);
+
     }
 
     private static <T> void serialize(T object, String fileName) {
@@ -116,6 +129,7 @@ class Emp implements Serializable {
     static int s;
     String name;
     int age;
+    Demo demo;
 
     // Default constructor
     public Emp(String name, int age, int t, int s) {
