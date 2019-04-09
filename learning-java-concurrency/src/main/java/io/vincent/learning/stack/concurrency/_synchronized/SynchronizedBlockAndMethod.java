@@ -45,12 +45,7 @@ public class SynchronizedBlockAndMethod {
         final SynchronizedBlockAndMethod staticBlock2 = new SynchronizedBlockAndMethod();
 
         ExecutorService executorService = Executors.newCachedThreadPool();
-        executorService.execute(new Runnable() {
-            @Override
-            public void run() {
-                staticBlock1.test1(1);
-            }
-        });
+        executorService.execute(() -> staticBlock1.test1(1));
         executorService.execute(() -> staticBlock2.test1(2));
 
         executorService.execute(() -> staticBlock1.test2(1));
