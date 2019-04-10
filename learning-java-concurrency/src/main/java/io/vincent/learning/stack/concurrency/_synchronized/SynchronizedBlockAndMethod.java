@@ -1,4 +1,4 @@
-package io.vincent.learning.stack.concurrency.sync;
+package io.vincent.learning.stack.concurrency._synchronized;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -21,9 +21,13 @@ public class SynchronizedBlockAndMethod {
      */
     public void test1(int t) {
         synchronized (this) {
-            for (int i = 0; i < 10; i++) {
-                log.info("test1 {} - {}", t, i);
-            }
+            doSomething(t, "test1 {} - {}");
+        }
+    }
+
+    private void doSomething(int t, String s) {
+        for (int i = 0; i < 10; i++) {
+            log.info(s, t, i);
         }
     }
 
@@ -33,9 +37,7 @@ public class SynchronizedBlockAndMethod {
      * @param t 标志
      */
     public synchronized void test2(int t) {
-        for (int i = 0; i < 10; i++) {
-            log.info("test2 {} - {}", t, i);
-        }
+        doSomething(t, "test2 {} - {}");
     }
 
     public static void main(String[] args) {
