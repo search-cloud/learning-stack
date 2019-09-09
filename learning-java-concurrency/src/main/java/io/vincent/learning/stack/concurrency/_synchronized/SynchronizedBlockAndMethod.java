@@ -6,7 +6,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by Vincent on 3/4/19.
+ * synchronized(this) 代码块，锁定当前对象
+ * synchronized 修饰普通非静态方法，锁定操作该方法的对象。
+ *
  *
  * @author Vincent
  * @since 1.0, 3/4/19
@@ -50,5 +52,6 @@ public class SynchronizedBlockAndMethod {
 
         executorService.execute(() -> staticBlock1.test2(1));
         executorService.execute(() -> staticBlock2.test2(2));
+        executorService.shutdown();
     }
 }
