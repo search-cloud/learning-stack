@@ -21,7 +21,7 @@ public class CustomerHarness {
         }
 
         // main thread is now acting as the monitoring thread
-        while (true) {
+        while (!Thread.currentThread().isInterrupted()) {
             try {
                 Thread.sleep(5000);
             } catch (InterruptedException e) {

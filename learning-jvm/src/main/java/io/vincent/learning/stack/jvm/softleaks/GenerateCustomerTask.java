@@ -37,7 +37,7 @@ public class GenerateCustomerTask implements Runnable {
             cm.addCustomer(c);
             totalCustomersGenerated++;
             cm.getNextCustomer();
-            // System.out.println(totalCustomersGenerated);
+//            log.info("TotalCustomersGenerated: {}", totalCustomersGenerated);
         }
     }
 
