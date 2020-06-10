@@ -5,9 +5,11 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
 
 /**
+ * Callable 代返回值的 Runnable
+ *
+ * Future 异步任务
  *
  *
- * Created by Vincent on 2/22/19.
  *
  * @author Vincent
  * @since 1.0, 2/22/19

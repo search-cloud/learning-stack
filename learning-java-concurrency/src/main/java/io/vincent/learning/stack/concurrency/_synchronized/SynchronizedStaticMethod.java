@@ -6,7 +6,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 /**
- * Created by Vincent on 3/4/19.
+ * synchronized (XXX.class) 锁定所有该类的对象。
+ * synchronized 修饰静态方法，也是锁定所有该类的实例对象。
  *
  * @author Vincent
  * @since 1.0, 3/4/19
@@ -49,5 +50,6 @@ public class SynchronizedStaticMethod {
         executorService.execute(() -> test2(1));
         executorService.execute(() -> test2(2));
         test1(0);
+        executorService.shutdown();
     }
 }

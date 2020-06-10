@@ -1,7 +1,8 @@
 package io.vincent.learning.stack.concurrency.happensbefore;
 
 /**
- * Created by Vincent on 2019/3/28.
+ * 线程 start 规则。
+ *  主线程调用 start() 方法之前，对共享变量的所有修改，线程内皆【可见】。
  *
  * @author Vincent
  * @since 1.0, 2019/3/28
@@ -13,8 +14,7 @@ public class HappensBefore5 {
     public void hb5() {
 
         Thread B = new Thread(() -> {
-            // 主线程调用 B.start() 之前
-            // 所有对共享变量的修改，此处皆可见
+            // 主线程调用 B.start() 之前，所有对共享变量的修改，此处皆可见
             // 此例中，var==77
             System.out.println(var);
         });
@@ -22,6 +22,10 @@ public class HappensBefore5 {
         var = 77;
         // 主线程启动子线程
         B.start();
+    }
+
+    public static void main(String[] args) {
+        new HappensBefore5().hb5();
     }
 
 }
