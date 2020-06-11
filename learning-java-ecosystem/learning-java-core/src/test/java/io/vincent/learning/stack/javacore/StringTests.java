@@ -1,5 +1,7 @@
 package io.vincent.learning.stack.javacore;
 
+import org.junit.Test;
+
 /**
  * 字符串学习.
  *
@@ -7,7 +9,8 @@ package io.vincent.learning.stack.javacore;
  * @since 1.0, 2/28/19
  */
 public class StringTests {
-    public static void main(String[] args) {
+    @Test
+    public void testString() {
 
         // a b 都在字符串常量池中
         String a = "Hello";

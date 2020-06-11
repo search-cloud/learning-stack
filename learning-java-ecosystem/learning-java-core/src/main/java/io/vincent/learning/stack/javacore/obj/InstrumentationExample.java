@@ -15,30 +15,15 @@ public class InstrumentationExample {
     }
 
     public static void printObjectSize1(Object object) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        ObjectOutputStream oos = null;
-        try {
-            oos = new ObjectOutputStream(baos);
+
+        try (ByteArrayOutputStream baos = new ByteArrayOutputStream();
+             ObjectOutputStream oos = new ObjectOutputStream(baos)) {
             oos.writeObject(object);
+            System.out.println("Object type: " + object.getClass() + ", size: " + baos.size() + " bytes");
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (oos != null) {
-                try {
-                    oos.flush();
-                    oos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            try {
-                baos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
 
-        System.out.println("Object type: " + object.getClass() + ", size: " + baos.size() + " bytes");
     }
 
     public static void main(String[] arguments) {
