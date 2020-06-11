@@ -1,0 +1,17 @@
+@startuml
+skinparam componentStyle uml2
+
+[Registry]
+
+[Provider] --up--> [Registry] : 1.Register: provider interfaces \n Subscribe configurations
+[Provider] <--up-- [Registry] : 3. Push: updated configurations
+
+[Consumer] -up--> [Registry] : 2.Register: consumer \n Subscribe provider, configurations, routers
+[Consumer] <-up-- [Registry] : 3. Push: updated provider configurations routers
+
+[Consumer] --left--> [Provider]: 4.Start long connection (Netty)
+
+[Provider] -down--> [Monitor]: 5. Provider、Consumer 启动时，启动定时器，发送统计数据给monitor
+[Consumer] -down--> [Monitor]
+
+@enduml

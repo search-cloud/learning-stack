@@ -5,10 +5,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
  */
 plugins {
     // Apply the Kotlin JVM plugin to add support for Kotlin on the JVM
-    kotlin("jvm") version "1.3.10" apply false
+    kotlin("jvm") version "1.3.71" apply false
     // assciidoctor
     id("org.asciidoctor.convert") version "1.5.6" apply false
     // Apply the application to add support for building a CLI application
+    id("io.spring.dependency-management") version "1.0.8.RELEASE"
 }
 
 /**
@@ -43,7 +44,7 @@ dependencies {
 var slf4jVersion = "1.7.25"
 var log4jVersion = "2.4.1"
 var logbackVersion = "1.2.3"
-var lombokVersion = "1.18.4"
+var lombokVersion = "1.18.8"
 
 /**
  * Sub projects configuration.
@@ -57,6 +58,8 @@ configure(subprojects) {
         "implementation"("org.jetbrains.kotlin:kotlin-reflect")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit")
+        "compileOnly"("org.projectlombok:lombok:$lombokVersion")
+        "annotationProcessor"("org.projectlombok:lombok:$lombokVersion")
 
         "implementation"("org.slf4j:slf4j-api:$slf4jVersion")
         "implementation"("org.slf4j:jcl-over-slf4j:$slf4jVersion")

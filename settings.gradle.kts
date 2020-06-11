@@ -1,14 +1,16 @@
 
 rootProject.name = "learning-stack"
 
-include("learning-java-core")
+include("learning-java-ecosystem:learning-java-core")
+include("learning-java-ecosystem:learning-java-concurrency")
+include("learning-java-ecosystem:learning-java-io-netty")
+include("learning-java-ecosystem:learning-jvm")
+
 include("learning-algorithm")
 include("learning-network")
-include("learning-netty")
 include("learning-design-patterns")
-include("learning-java-concurrency")
-include("learning-jvm")
 include("learning-compilation")
+
 include("learning-webserver:learning-nginx")
 include("learning-webserver:learning-tomcat")
 
@@ -22,4 +24,7 @@ include("learning-architecture:learning-architecture-slash")
 
 include("learning-data-stream")
 include("learning-elasticsearch")
-include("learning-mysql")
+
+include("learning-db:learning-mysql")
+
+include("learning-stack-docs")

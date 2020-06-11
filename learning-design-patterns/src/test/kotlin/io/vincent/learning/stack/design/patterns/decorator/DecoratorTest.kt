@@ -24,7 +24,14 @@ class DecoratorTest {
                 )
         )
 
+        val preferential1 = discountDecorator.getPreferential(PreferentialContext(
+                PurchaseOrder(1, Offer(itemTotalPrice = 398.0, orderTotalPrice = 398.0)),
+                Preferential(price = 30.0, condition = Condition(30.0), type = Preferential.Type.COUPON.code)
+        ))
+
+
         println(preferential)
+        println(preferential1)
 
     }
 

@@ -1,0 +1,1 @@
+Premain-class: io.vincent.learning.stack.javacore.obj.InstrumentationAgent
