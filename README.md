@@ -85,7 +85,7 @@
 - MVCC
 - Data Index
 - 读写分离
-- Data Shard
+- Data Sharding
 
 ### Search Engine
 - Reverse Index
@@ -102,7 +102,7 @@
 - Paxos
 - Zab
 - Raft
-- Sossip
+- Gossip
 - 一致性 Hash
 - Distributed Lock
 - Distributed ID
@@ -126,7 +126,7 @@
 - Basic Sort
 - Array
 - Linked
-- Stack
+- Stack
 - Queue
 - Hash
 - Binary Tree
@@ -136,7 +136,7 @@
 - Trie
 - 递归
 - Binary Search
-- 贪心算法
+- 贪心算法
 - 分治算法
 - 回溯算法
 - 动态规划

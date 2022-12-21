@@ -1,6 +1,27 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 /**
+* 构建的配置
+*/
+buildscript {
+    val springBootVersion = "2.1.3.RELEASE"
+    val kotlinVersion = "1.3.71"
+
+    repositories {
+        mavenLocal()
+        jcenter()
+        maven ( "https://repo.spring.io/snapshot" )
+        maven ( "https://repo.spring.io/milestone" )
+        maven ( "https://plugins.gradle.org/m2/" )
+    }
+    dependencies {
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
+        classpath("io.spring.gradle:dependency-management-plugin:1.0.8.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+/**
  * This project's plugins.
  */
 plugins {
@@ -71,12 +92,12 @@ configure(subprojects) {
 
     val compileKotlin: KotlinCompile by tasks
     compileKotlin.kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     val compileJava: JavaCompile by tasks
-    compileJava.sourceCompatibility = "1.8"
-    compileJava.targetCompatibility = "1.8"
+    compileJava.sourceCompatibility = "11"
+    compileJava.targetCompatibility = "11"
 
 }
 
