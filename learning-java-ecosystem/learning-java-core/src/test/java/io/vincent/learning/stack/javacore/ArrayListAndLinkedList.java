@@ -14,7 +14,7 @@ import org.junit.Test;
 public class ArrayListAndLinkedList {
 
     @Test
-    public static void test() {
+    public void test() {
         new ArrayList<>();
         new LinkedList<>();
     }

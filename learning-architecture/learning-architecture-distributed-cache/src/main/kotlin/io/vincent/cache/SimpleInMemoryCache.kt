@@ -77,7 +77,7 @@ class SimpleInMemoryCache<K : Serializable, V : Serializable> : Cache<K, V> {
     }
 
     private inner class CacheData<V>(val value: V, val expiryTime: Long) {
-        internal val expired: Boolean
+        val expired: Boolean
             get() = System.currentTimeMillis() > expiryTime
     }
 
@@ -86,6 +86,6 @@ class SimpleInMemoryCache<K : Serializable, V : Serializable> : Cache<K, V> {
         private const val CLEAN_UP_PERIOD_IN_SEC = 5
     }
 
-    // default expiry time 1 minutes.
-    override val defaultExpiryTime: Long = 360 * 1000
+    // default expiry time 30 seconds.
+    override val defaultExpiryTime: Long = 30 * 1000
 }

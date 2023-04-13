@@ -1,90 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Diagram>
   <ID>JAVA</ID>
-  <OriginalElement>io.netty.channel.ChannelOutboundInvoker</OriginalElement>
-  <nodes>
-    <node x="468.0" y="237.0">io.netty.channel.socket.ServerSocketChannel</node>
-    <node x="254.0" y="79.0">io.netty.channel.Channel</node>
-    <node x="44.75" y="395.0">io.netty.channel.socket.nio.NioSocketChannel</node>
-    <node x="200.0" y="0.0">io.netty.channel.ChannelOutboundInvoker</node>
-    <node x="395.75" y="395.0">io.netty.channel.socket.nio.NioServerSocketChannel</node>
-    <node x="225.3571428571429" y="158.0">io.netty.channel.AbstractChannel</node>
-    <node x="214.8571428571429" y="237.0">io.netty.channel.nio.AbstractNioChannel</node>
-    <node x="0.0" y="158.0">io.netty.channel.socket.SocketChannel</node>
-    <node x="306.5" y="316.0">io.netty.channel.nio.AbstractNioMessageChannel</node>
-    <node x="489.0" y="158.0">io.netty.channel.ServerChannel</node>
-    <node x="86.5" y="316.0">io.netty.channel.nio.AbstractNioByteChannel</node>
-  </nodes>
+  <OriginalElement />
+  <nodes />
   <notes />
-  <edges>
-    <edge source="io.netty.channel.socket.ServerSocketChannel" target="io.netty.channel.ServerChannel">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.nio.AbstractNioChannel" target="io.netty.channel.AbstractChannel">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.nio.AbstractNioMessageChannel" target="io.netty.channel.nio.AbstractNioChannel">
-      <point x="0.0" y="-14.5" />
-      <point x="419.5" y="291.0" />
-      <point x="343.8571428571429" y="291.0" />
-      <point x="43.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.Channel" target="io.netty.channel.ChannelOutboundInvoker">
-      <point x="0.0" y="-14.5" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.socket.nio.NioSocketChannel" target="io.netty.channel.socket.SocketChannel">
-      <point x="-40.25" y="-14.5" />
-      <point x="85.0" y="370.0" />
-      <point x="70.00000000000003" y="370.0" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.AbstractChannel" target="io.netty.channel.Channel">
-      <point x="0.0" y="-14.5" />
-      <point x="300.8571428571429" y="133.0" />
-      <point x="303.0" y="133.0" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.ServerChannel" target="io.netty.channel.Channel">
-      <point x="0.0" y="-14.5" />
-      <point x="557.5" y="133.0" />
-      <point x="335.66666666666663" y="133.0" />
-      <point x="32.66666666666663" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.nio.AbstractNioByteChannel" target="io.netty.channel.nio.AbstractNioChannel">
-      <point x="0.0" y="-14.5" />
-      <point x="186.5" y="291.0" />
-      <point x="257.8571428571429" y="291.0" />
-      <point x="-43.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.socket.nio.NioSocketChannel" target="io.netty.channel.nio.AbstractNioByteChannel">
-      <point x="40.25" y="-14.5" />
-      <point x="165.5" y="370.0" />
-      <point x="186.5" y="370.0" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.socket.nio.NioServerSocketChannel" target="io.netty.channel.nio.AbstractNioMessageChannel">
-      <point x="-50.0" y="-14.5" />
-      <point x="445.75" y="370.0" />
-      <point x="419.5" y="370.0" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.socket.nio.NioServerSocketChannel" target="io.netty.channel.socket.ServerSocketChannel">
-      <point x="50.0" y="-14.5" />
-      <point x="545.75" y="370.0" />
-      <point x="557.5" y="370.0" />
-      <point x="0.0" y="14.5" />
-    </edge>
-    <edge source="io.netty.channel.socket.SocketChannel" target="io.netty.channel.Channel">
-      <point x="0.0" y="-14.5" />
-      <point x="70.0" y="133.0" />
-      <point x="270.3333333333333" y="133.0" />
-      <point x="-32.666666666666686" y="14.5" />
-    </edge>
-  </edges>
-  <settings layout="Hierarchic Group" zoom="1.0" x="291.0" y="212.0" />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="9717.0" y="-3958.5" />
   <SelectedNodes />
   <Categories />
   <SCOPE>All</SCOPE>

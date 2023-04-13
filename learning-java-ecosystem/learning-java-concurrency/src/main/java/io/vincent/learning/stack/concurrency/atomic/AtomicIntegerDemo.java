@@ -23,7 +23,7 @@ public class AtomicIntegerDemo implements Adder {
     private static AtomicInteger count = new AtomicInteger(0);
 
     public static void main(String[] args) {
-        new ClientTest(new AtomicIntegerDemo()).runConcurrencyTest();
+        new AdderClientTest(new AtomicIntegerDemo(), 50000, 200).runConcurrencyTest();
     }
 
 

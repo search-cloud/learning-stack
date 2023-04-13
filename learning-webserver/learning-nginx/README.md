@@ -2,24 +2,24 @@
 
 ### Install
 
-```
+```bash
 yum install -y httpd-devel pcre perl pcre-devel zlib zlib-devel GeoIP GeoIP-devel
 ```
 
 unzip:
-```s
+```bash
 tar -xvf zlib-1.2.11.tar.gz
 tar -xvf pcre-8.42.tar.gz
 tar -xvf openssl-1.0.2q.tar.gz
 ```
 
 install gcc g++:
-```
+```bash
 yum install gcc gcc-c++
 ```
 
 configure:
-```s
+```bash
 ./configure --user=nginx --group=nginx \
 --prefix=/usr/share/nginx \
 --sbin-path=/usr/sbin/nginx \
@@ -42,7 +42,7 @@ configure:
 --with-zlib=/home/vincentlu/zlib-1.2.11 --with-http_geoip_module
 ```
 
-```
+```log
 Configuration summary
   + using PCRE library: /home/vincentlu/pcre-8.42
   + using OpenSSL library: /home/vincentlu/openssl-1.0.2q

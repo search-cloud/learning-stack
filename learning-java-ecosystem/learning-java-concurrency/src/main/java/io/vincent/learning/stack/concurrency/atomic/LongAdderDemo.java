@@ -17,10 +17,10 @@ import lombok.extern.slf4j.Slf4j;
 @ThreadSafe
 public class LongAdderDemo implements Adder {
 
-    private static LongAdder count = new LongAdder();
+    private static final LongAdder count = new LongAdder();
 
     public static void main(String[] args) {
-        new ClientTest(new LongAdderDemo()).runConcurrencyTest();
+        new AdderClientTest(new LongAdderDemo(), 50000, 200).runConcurrencyTest();
     }
 
     public void add() {

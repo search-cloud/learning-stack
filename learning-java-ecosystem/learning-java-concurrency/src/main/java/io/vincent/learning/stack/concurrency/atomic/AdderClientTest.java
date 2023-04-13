@@ -14,15 +14,17 @@ import lombok.extern.slf4j.Slf4j;
  * @since 1.0, 2/25/19
  */
 @Slf4j
-public class ClientTest {
+public class AdderClientTest {
 
-    private static int clients = 5000;
-    private static int threadPoolSize = 200;
+    private int clients = 5000;
+    private int threadPoolSize = 200;
 
-    private Adder adder;
+    private final Adder adder;
 
-    public ClientTest(Adder adder) {
+    public AdderClientTest(Adder adder, int clients, int threadPoolSize) {
         this.adder = adder;
+        this.clients = clients;
+        this.threadPoolSize = threadPoolSize;
     }
 
     void runConcurrencyTest() {

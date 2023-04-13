@@ -16,7 +16,7 @@ public class SampleAdderDemo implements Adder {
     private static int count = 0;
 
     public static void main(String[] args) {
-        new ClientTest(new SampleAdderDemo()).runConcurrencyTest();
+        new AdderClientTest(new SampleAdderDemo(), 50000, 200).runConcurrencyTest();
     }
 
     @Override

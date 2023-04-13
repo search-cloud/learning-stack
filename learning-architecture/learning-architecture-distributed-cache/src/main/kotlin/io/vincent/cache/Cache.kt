@@ -58,7 +58,7 @@ interface Cache<K : Serializable, V : Serializable> {
         return defaultExpiryTime
     }
 
-    // default expiry time 1 minutes.
+    // default expiry time 30 seconds.
     val defaultExpiryTime: Long
-        get() = 60 * 1000
+        get() = 30 * 1000
 }

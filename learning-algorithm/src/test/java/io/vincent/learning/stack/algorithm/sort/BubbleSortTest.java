@@ -1,10 +1,10 @@
 package io.vincent.learning.stack.algorithm.sort;
 
 
-import org.junit.Test;
-
 import java.util.Arrays;
 import java.util.List;
+
+import org.junit.Test;
 
 import static io.vincent.learning.stack.algorithm.sort.Printer.printList;
 
@@ -24,7 +24,7 @@ public class BubbleSortTest {
 		System.out.println("before sort: ");
 		printList(list);
 
-		System.out.println("begin: ");
+		System.out.println("Bubble sort begin: --------------------------------------");
 		List<Integer> sorts = BubbleSort.sort(list);
 
 		System.out.println("after sort: ");
