@@ -77,6 +77,7 @@ configure(subprojects) {
     dependencies {
         "implementation"("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         "implementation"("org.jetbrains.kotlin:kotlin-reflect")
+        "implementation"("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test")
         "testImplementation"("org.jetbrains.kotlin:kotlin-test-junit")
         "compileOnly"("org.projectlombok:lombok:$lombokVersion")

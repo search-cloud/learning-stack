@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Agent-Class: io.vincent.learning.stack.jvm.instrument.SnailAgentMain
+Premain-Class: io.vincent.learning.stack.jvm.instrument.SnailAgentMain
+Can-Redefine-Classes: true
+Can-Retransform-Classes: true
+Created-By: 1.8.0_291 (Oracle Corporation)
+

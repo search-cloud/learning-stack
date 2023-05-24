@@ -11,6 +11,10 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CustomerHarness {
 
+    int a = 1;
+    float x = 4;
+    Double y = 0.8;
+
     public static void main(String[] args) {
         CustomerManager cm = new CustomerManager();
         GenerateCustomerTask task = new GenerateCustomerTask(cm);
@@ -31,6 +35,13 @@ public class CustomerHarness {
             log.info("Available memory: " + Runtime.getRuntime().freeMemory() / 1024 + "k");
 
         }
+
+        double mix = new CustomerHarness().mix();
+        System.out.println(mix);
+    }
+
+    public double mix() {
+        return x * y + a;
     }
 
 }

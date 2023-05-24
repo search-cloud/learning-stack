@@ -1,0 +1,321 @@
+Compiled from "CustomerHarness.java"
+public class io.vincent.learning.stack.jvm.softleaks.CustomerHarness {
+  public io.vincent.learning.stack.jvm.softleaks.CustomerHarness();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static void main(java.lang.String[]);
+    Code:
+       0: new           #2                  // class io/vincent/learning/stack/jvm/softleaks/CustomerManager
+       3: dup
+       4: invokespecial #3                  // Method io/vincent/learning/stack/jvm/softleaks/CustomerManager."<init>":()V
+       7: astore_1
+       8: new           #4                  // class io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask
+      11: dup
+      12: aload_1
+      13: invokespecial #5                  // Method io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask."<init>":(Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;)V
+      16: astore_2
+      17: iconst_0
+      18: istore_3
+      19: iload_3
+      20: bipush        10
+      22: if_icmpge     46
+      25: new           #6                  // class java/lang/Thread
+      28: dup
+      29: aload_2
+      30: invokespecial #7                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+      33: astore        4
+      35: aload         4
+      37: invokevirtual #8                  // Method java/lang/Thread.start:()V
+      40: iinc          3, 1
+      43: goto          19
+      46: invokestatic  #9                  // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+      49: invokevirtual #10                 // Method java/lang/Thread.isInterrupted:()Z
+      52: ifne          117
+      55: ldc2_w        #11                 // long 5000l
+      58: invokestatic  #13                 // Method java/lang/Thread.sleep:(J)V
+      61: goto          69
+      64: astore_3
+      65: aload_3
+      66: invokevirtual #15                 // Method java/lang/InterruptedException.printStackTrace:()V
+      69: aload_1
+      70: invokevirtual #16                 // Method io/vincent/learning/stack/jvm/softleaks/CustomerManager.howManyCustomers:()V
+      73: getstatic     #17                 // Field log:Lorg/slf4j/Logger;
+      76: new           #18                 // class java/lang/StringBuilder
+      79: dup
+      80: invokespecial #19                 // Method java/lang/StringBuilder."<init>":()V
+      83: ldc           #20                 // String Available memory:
+      85: invokevirtual #21                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      88: invokestatic  #22                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+      91: invokevirtual #23                 // Method java/lang/Runtime.freeMemory:()J
+      94: ldc2_w        #24                 // long 1024l
+      97: ldiv
+      98: invokevirtual #26                 // Method java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+     101: ldc           #27                 // String k
+     103: invokevirtual #21                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+     106: invokevirtual #28                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+     109: invokeinterface #29,  2           // InterfaceMethod org/slf4j/Logger.info:(Ljava/lang/String;)V
+     114: goto          46
+     117: return
+    Exception table:
+       from    to  target type
+          55    61    64   Class java/lang/InterruptedException
+
+  static {};
+    Code:
+       0: ldc           #30                 // class io/vincent/learning/stack/jvm/softleaks/CustomerHarness
+       2: invokestatic  #31                 // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+       5: putstatic     #17                 // Field log:Lorg/slf4j/Logger;
+       8: return
+}
+
+javap -v -c:
+
+Classfile /Users/Vincent/Workstation/Learning/workspace/lxx/learning-stack/learning-java-ecosystem/learning-jvm/build/classes/java/main/io/vincent/learning/stack/jvm/softleaks/CustomerHarness.class
+  Last modified Apr 24, 2023; size 2021 bytes
+  MD5 checksum 0df2cde8d1fae6074266d5932930cbed
+  Compiled from "CustomerHarness.java"
+public class io.vincent.learning.stack.jvm.softleaks.CustomerHarness
+  minor version: 0
+  major version: 52
+  flags: (0x0021) ACC_PUBLIC, ACC_SUPER
+  this_class: #30                         // io/vincent/learning/stack/jvm/softleaks/CustomerHarness
+  super_class: #32                        // java/lang/Object
+  interfaces: 0, fields: 1, methods: 3, attributes: 1
+Constant pool:
+    #1 = Methodref          #32.#60       // java/lang/Object."<init>":()V
+    #2 = Class              #61           // io/vincent/learning/stack/jvm/softleaks/CustomerManager
+    #3 = Methodref          #2.#60        // io/vincent/learning/stack/jvm/softleaks/CustomerManager."<init>":()V
+    #4 = Class              #62           // io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask
+    #5 = Methodref          #4.#63        // io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask."<init>":(Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;)V
+    #6 = Class              #64           // java/lang/Thread
+    #7 = Methodref          #6.#65        // java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+    #8 = Methodref          #6.#66        // java/lang/Thread.start:()V
+    #9 = Methodref          #6.#67        // java/lang/Thread.currentThread:()Ljava/lang/Thread;
+   #10 = Methodref          #6.#68        // java/lang/Thread.isInterrupted:()Z
+   #11 = Long               5000l
+   #13 = Methodref          #6.#69        // java/lang/Thread.sleep:(J)V
+   #14 = Class              #70           // java/lang/InterruptedException
+   #15 = Methodref          #14.#71       // java/lang/InterruptedException.printStackTrace:()V
+   #16 = Methodref          #2.#72        // io/vincent/learning/stack/jvm/softleaks/CustomerManager.howManyCustomers:()V
+   #17 = Fieldref           #30.#73       // io/vincent/learning/stack/jvm/softleaks/CustomerHarness.log:Lorg/slf4j/Logger;
+   #18 = Class              #74           // java/lang/StringBuilder
+   #19 = Methodref          #18.#60       // java/lang/StringBuilder."<init>":()V
+   #20 = String             #75           // Available memory:
+   #21 = Methodref          #18.#76       // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #22 = Methodref          #77.#78       // java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+   #23 = Methodref          #77.#79       // java/lang/Runtime.freeMemory:()J
+   #24 = Long               1024l
+   #26 = Methodref          #18.#80       // java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+   #27 = String             #81           // k
+   #28 = Methodref          #18.#82       // java/lang/StringBuilder.toString:()Ljava/lang/String;
+   #29 = InterfaceMethodref #83.#84       // org/slf4j/Logger.info:(Ljava/lang/String;)V
+   #30 = Class              #85           // io/vincent/learning/stack/jvm/softleaks/CustomerHarness
+   #31 = Methodref          #86.#87       // org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+   #32 = Class              #88           // java/lang/Object
+   #33 = Utf8               log
+   #34 = Utf8               Lorg/slf4j/Logger;
+   #35 = Utf8               <init>
+   #36 = Utf8               ()V
+   #37 = Utf8               Code
+   #38 = Utf8               LineNumberTable
+   #39 = Utf8               LocalVariableTable
+   #40 = Utf8               this
+   #41 = Utf8               Lio/vincent/learning/stack/jvm/softleaks/CustomerHarness;
+   #42 = Utf8               main
+   #43 = Utf8               ([Ljava/lang/String;)V
+   #44 = Utf8               t
+   #45 = Utf8               Ljava/lang/Thread;
+   #46 = Utf8               user
+   #47 = Utf8               I
+   #48 = Utf8               e
+   #49 = Utf8               Ljava/lang/InterruptedException;
+   #50 = Utf8               args
+   #51 = Utf8               [Ljava/lang/String;
+   #52 = Utf8               cm
+   #53 = Utf8               Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;
+   #54 = Utf8               task
+   #55 = Utf8               Lio/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask;
+   #56 = Utf8               StackMapTable
+   #57 = Utf8               <clinit>
+   #58 = Utf8               SourceFile
+   #59 = Utf8               CustomerHarness.java
+   #60 = NameAndType        #35:#36       // "<init>":()V
+   #61 = Utf8               io/vincent/learning/stack/jvm/softleaks/CustomerManager
+   #62 = Utf8               io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask
+   #63 = NameAndType        #35:#89       // "<init>":(Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;)V
+   #64 = Utf8               java/lang/Thread
+   #65 = NameAndType        #35:#90       // "<init>":(Ljava/lang/Runnable;)V
+   #66 = NameAndType        #91:#36       // start:()V
+   #67 = NameAndType        #92:#93       // currentThread:()Ljava/lang/Thread;
+   #68 = NameAndType        #94:#95       // isInterrupted:()Z
+   #69 = NameAndType        #96:#97       // sleep:(J)V
+   #70 = Utf8               java/lang/InterruptedException
+   #71 = NameAndType        #98:#36       // printStackTrace:()V
+   #72 = NameAndType        #99:#36       // howManyCustomers:()V
+   #73 = NameAndType        #33:#34       // log:Lorg/slf4j/Logger;
+   #74 = Utf8               java/lang/StringBuilder
+   #75 = Utf8               Available memory:
+   #76 = NameAndType        #100:#101     // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+   #77 = Class              #102          // java/lang/Runtime
+   #78 = NameAndType        #103:#104     // getRuntime:()Ljava/lang/Runtime;
+   #79 = NameAndType        #105:#106     // freeMemory:()J
+   #80 = NameAndType        #100:#107     // append:(J)Ljava/lang/StringBuilder;
+   #81 = Utf8               k
+   #82 = NameAndType        #108:#109     // toString:()Ljava/lang/String;
+   #83 = Class              #110          // org/slf4j/Logger
+   #84 = NameAndType        #111:#112     // info:(Ljava/lang/String;)V
+   #85 = Utf8               io/vincent/learning/stack/jvm/softleaks/CustomerHarness
+   #86 = Class              #113          // org/slf4j/LoggerFactory
+   #87 = NameAndType        #114:#115     // getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+   #88 = Utf8               java/lang/Object
+   #89 = Utf8               (Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;)V
+   #90 = Utf8               (Ljava/lang/Runnable;)V
+   #91 = Utf8               start
+   #92 = Utf8               currentThread
+   #93 = Utf8               ()Ljava/lang/Thread;
+   #94 = Utf8               isInterrupted
+   #95 = Utf8               ()Z
+   #96 = Utf8               sleep
+   #97 = Utf8               (J)V
+   #98 = Utf8               printStackTrace
+   #99 = Utf8               howManyCustomers
+  #100 = Utf8               append
+  #101 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #102 = Utf8               java/lang/Runtime
+  #103 = Utf8               getRuntime
+  #104 = Utf8               ()Ljava/lang/Runtime;
+  #105 = Utf8               freeMemory
+  #106 = Utf8               ()J
+  #107 = Utf8               (J)Ljava/lang/StringBuilder;
+  #108 = Utf8               toString
+  #109 = Utf8               ()Ljava/lang/String;
+  #110 = Utf8               org/slf4j/Logger
+  #111 = Utf8               info
+  #112 = Utf8               (Ljava/lang/String;)V
+  #113 = Utf8               org/slf4j/LoggerFactory
+  #114 = Utf8               getLogger
+  #115 = Utf8               (Ljava/lang/Class;)Lorg/slf4j/Logger;
+{
+  public io.vincent.learning.stack.jvm.softleaks.CustomerHarness();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 12: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   Lio/vincent/learning/stack/jvm/softleaks/CustomerHarness;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=6, locals=5, args_size=1
+         0: new           #2                  // class io/vincent/learning/stack/jvm/softleaks/CustomerManager
+         3: dup
+         4: invokespecial #3                  // Method io/vincent/learning/stack/jvm/softleaks/CustomerManager."<init>":()V
+         7: astore_1
+         8: new           #4                  // class io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask
+        11: dup
+        12: aload_1
+        13: invokespecial #5                  // Method io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask."<init>":(Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;)V
+        16: astore_2
+        17: iconst_0
+        18: istore_3
+        19: iload_3
+        20: bipush        10
+        22: if_icmpge     46
+        25: new           #6                  // class java/lang/Thread
+        28: dup
+        29: aload_2
+        30: invokespecial #7                  // Method java/lang/Thread."<init>":(Ljava/lang/Runnable;)V
+        33: astore        4
+        35: aload         4
+        37: invokevirtual #8                  // Method java/lang/Thread.start:()V
+        40: iinc          3, 1
+        43: goto          19
+        46: invokestatic  #9                  // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+        49: invokevirtual #10                 // Method java/lang/Thread.isInterrupted:()Z
+        52: ifne          117
+        55: ldc2_w        #11                 // long 5000l
+        58: invokestatic  #13                 // Method java/lang/Thread.sleep:(J)V
+        61: goto          69
+        64: astore_3
+        65: aload_3
+        66: invokevirtual #15                 // Method java/lang/InterruptedException.printStackTrace:()V
+        69: aload_1
+        70: invokevirtual #16                 // Method io/vincent/learning/stack/jvm/softleaks/CustomerManager.howManyCustomers:()V
+        73: getstatic     #17                 // Field log:Lorg/slf4j/Logger;
+        76: new           #18                 // class java/lang/StringBuilder
+        79: dup
+        80: invokespecial #19                 // Method java/lang/StringBuilder."<init>":()V
+        83: ldc           #20                 // String Available memory:
+        85: invokevirtual #21                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        88: invokestatic  #22                 // Method java/lang/Runtime.getRuntime:()Ljava/lang/Runtime;
+        91: invokevirtual #23                 // Method java/lang/Runtime.freeMemory:()J
+        94: ldc2_w        #24                 // long 1024l
+        97: ldiv
+        98: invokevirtual #26                 // Method java/lang/StringBuilder.append:(J)Ljava/lang/StringBuilder;
+       101: ldc           #27                 // String k
+       103: invokevirtual #21                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+       106: invokevirtual #28                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+       109: invokeinterface #29,  2           // InterfaceMethod org/slf4j/Logger.info:(Ljava/lang/String;)V
+       114: goto          46
+       117: return
+      Exception table:
+         from    to  target type
+            55    61    64   Class java/lang/InterruptedException
+      LineNumberTable:
+        line 15: 0
+        line 16: 8
+        line 18: 17
+        line 19: 25
+        line 20: 35
+        line 18: 40
+        line 24: 46
+        line 26: 55
+        line 29: 61
+        line 27: 64
+        line 28: 65
+        line 30: 69
+        line 31: 73
+        line 34: 117
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+           35       5     4     t   Ljava/lang/Thread;
+           19      27     3  user   I
+           65       4     3     e   Ljava/lang/InterruptedException;
+            0     118     0  args   [Ljava/lang/String;
+            8     110     1    cm   Lio/vincent/learning/stack/jvm/softleaks/CustomerManager;
+           17     101     2  task   Lio/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask;
+      StackMapTable: number_of_entries = 5
+        frame_type = 254 /* append */
+          offset_delta = 19
+          locals = [ class io/vincent/learning/stack/jvm/softleaks/CustomerManager, class io/vincent/learning/stack/jvm/softleaks/GenerateCustomerTask, int ]
+        frame_type = 250 /* chop */
+          offset_delta = 26
+        frame_type = 81 /* same_locals_1_stack_item */
+          stack = [ class java/lang/InterruptedException ]
+        frame_type = 4 /* same */
+        frame_type = 47 /* same */
+
+  static {};
+    descriptor: ()V
+    flags: (0x0008) ACC_STATIC
+    Code:
+      stack=1, locals=0, args_size=0
+         0: ldc           #30                 // class io/vincent/learning/stack/jvm/softleaks/CustomerHarness
+         2: invokestatic  #31                 // Method org/slf4j/LoggerFactory.getLogger:(Ljava/lang/Class;)Lorg/slf4j/Logger;
+         5: putstatic     #17                 // Field log:Lorg/slf4j/Logger;
+         8: return
+      LineNumberTable:
+        line 11: 0
+}
+SourceFile: "CustomerHarness.java"

@@ -1,0 +1,223 @@
+Classfile /Users/Vincent/Workstation/Learning/workspace/lxx/learning-stack/learning-java-ecosystem/learning-jvm/build/classes/java/main/io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal.class
+  Last modified Apr 27, 2023; size 1597 bytes
+  MD5 checksum 7f42d1fbf6a2e9b897406930e0d5f8f8
+  Compiled from "TestPublicFinal.java"
+public final class io.vincent.learning.stack.jvm.clazzformat.TestPublicFinal
+  minor version: 0
+  major version: 52
+  flags: (0x0031) ACC_PUBLIC, ACC_FINAL, ACC_SUPER
+  this_class: #12                         // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal
+  super_class: #25                        // java/lang/Object
+  interfaces: 0, fields: 4, methods: 4, attributes: 1
+Constant pool:
+   #1 = Methodref          #25.#53        // java/lang/Object."<init>":()V
+   #2 = Long               4526l
+   #4 = Methodref          #54.#55        // java/lang/Long.valueOf:(J)Ljava/lang/Long;
+   #5 = Fieldref           #12.#56        // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal.id:Ljava/lang/Long;
+   #6 = String             #57            // Vincent
+   #7 = Fieldref           #12.#58        // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal.name:Ljava/lang/String;
+   #8 = Methodref          #59.#60        // java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+   #9 = Fieldref           #12.#61        // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal.age:Ljava/lang/Integer;
+  #10 = Class              #62            // java/lang/StringBuilder
+  #11 = Methodref          #10.#53        // java/lang/StringBuilder."<init>":()V
+  #12 = Class              #63            // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal
+  #13 = String             #64            // TestPublicFinal{individual=individual.lu, id=
+  #14 = Methodref          #10.#65        // java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #15 = Methodref          #10.#66        // java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #16 = String             #67            // , name=
+  #17 = String             #68            // , age=
+  #18 = Methodref          #10.#69        // java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+  #19 = Methodref          #10.#70        // java/lang/StringBuilder.toString:()Ljava/lang/String;
+  #20 = Methodref          #12.#53        // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal."<init>":()V
+  #21 = String             #71            // Vincent.Lu
+  #22 = Methodref          #12.#72        // io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal.rename:(Ljava/lang/String;)V
+  #23 = Fieldref           #73.#74        // java/lang/System.out:Ljava/io/PrintStream;
+  #24 = Methodref          #75.#76        // java/io/PrintStream.println:(Ljava/lang/Object;)V
+  #25 = Class              #77            // java/lang/Object
+  #26 = Utf8               individual
+  #27 = Utf8               Ljava/lang/String;
+  #28 = Utf8               ConstantValue
+  #29 = String             #78            // individual.lu
+  #30 = Utf8               id
+  #31 = Utf8               Ljava/lang/Long;
+  #32 = Utf8               name
+  #33 = Utf8               age
+  #34 = Utf8               Ljava/lang/Integer;
+  #35 = Utf8               <init>
+  #36 = Utf8               ()V
+  #37 = Utf8               Code
+  #38 = Utf8               LineNumberTable
+  #39 = Utf8               LocalVariableTable
+  #40 = Utf8               this
+  #41 = Utf8               Lio/vincent/learning/stack/jvm/clazzformat/TestPublicFinal;
+  #42 = Utf8               rename
+  #43 = Utf8               (Ljava/lang/String;)V
+  #44 = Utf8               toString
+  #45 = Utf8               ()Ljava/lang/String;
+  #46 = Utf8               main
+  #47 = Utf8               ([Ljava/lang/String;)V
+  #48 = Utf8               args
+  #49 = Utf8               [Ljava/lang/String;
+  #50 = Utf8               obj
+  #51 = Utf8               SourceFile
+  #52 = Utf8               TestPublicFinal.java
+  #53 = NameAndType        #35:#36        // "<init>":()V
+  #54 = Class              #79            // java/lang/Long
+  #55 = NameAndType        #80:#81        // valueOf:(J)Ljava/lang/Long;
+  #56 = NameAndType        #30:#31        // id:Ljava/lang/Long;
+  #57 = Utf8               Vincent
+  #58 = NameAndType        #32:#27        // name:Ljava/lang/String;
+  #59 = Class              #82            // java/lang/Integer
+  #60 = NameAndType        #80:#83        // valueOf:(I)Ljava/lang/Integer;
+  #61 = NameAndType        #33:#34        // age:Ljava/lang/Integer;
+  #62 = Utf8               java/lang/StringBuilder
+  #63 = Utf8               io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal
+  #64 = Utf8               TestPublicFinal{individual=individual.lu, id=
+  #65 = NameAndType        #84:#85        // append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #66 = NameAndType        #84:#86        // append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #67 = Utf8               , name=
+  #68 = Utf8               , age=
+  #69 = NameAndType        #84:#87        // append:(C)Ljava/lang/StringBuilder;
+  #70 = NameAndType        #44:#45        // toString:()Ljava/lang/String;
+  #71 = Utf8               Vincent.Lu
+  #72 = NameAndType        #42:#43        // rename:(Ljava/lang/String;)V
+  #73 = Class              #88            // java/lang/System
+  #74 = NameAndType        #89:#90        // out:Ljava/io/PrintStream;
+  #75 = Class              #91            // java/io/PrintStream
+  #76 = NameAndType        #92:#93        // println:(Ljava/lang/Object;)V
+  #77 = Utf8               java/lang/Object
+  #78 = Utf8               individual.lu
+  #79 = Utf8               java/lang/Long
+  #80 = Utf8               valueOf
+  #81 = Utf8               (J)Ljava/lang/Long;
+  #82 = Utf8               java/lang/Integer
+  #83 = Utf8               (I)Ljava/lang/Integer;
+  #84 = Utf8               append
+  #85 = Utf8               (Ljava/lang/String;)Ljava/lang/StringBuilder;
+  #86 = Utf8               (Ljava/lang/Object;)Ljava/lang/StringBuilder;
+  #87 = Utf8               (C)Ljava/lang/StringBuilder;
+  #88 = Utf8               java/lang/System
+  #89 = Utf8               out
+  #90 = Utf8               Ljava/io/PrintStream;
+  #91 = Utf8               java/io/PrintStream
+  #92 = Utf8               println
+  #93 = Utf8               (Ljava/lang/Object;)V
+{
+  public static final java.lang.String individual;
+    descriptor: Ljava/lang/String;
+    flags: (0x0019) ACC_PUBLIC, ACC_STATIC, ACC_FINAL
+    ConstantValue: String individual.lu
+
+  public java.lang.String name;
+    descriptor: Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+
+  java.lang.Integer age;
+    descriptor: Ljava/lang/Integer;
+    flags: (0x0000)
+
+  public io.vincent.learning.stack.jvm.clazzformat.TestPublicFinal();
+    descriptor: ()V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=3, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+         4: aload_0
+         5: ldc2_w        #2                  // long 4526l
+         8: invokestatic  #4                  // Method java/lang/Long.valueOf:(J)Ljava/lang/Long;
+        11: putfield      #5                  // Field id:Ljava/lang/Long;
+        14: aload_0
+        15: ldc           #6                  // String Vincent
+        17: putfield      #7                  // Field name:Ljava/lang/String;
+        20: aload_0
+        21: bipush        18
+        23: invokestatic  #8                  // Method java/lang/Integer.valueOf:(I)Ljava/lang/Integer;
+        26: putfield      #9                  // Field age:Ljava/lang/Integer;
+        29: return
+      LineNumberTable:
+        line 9: 0
+        line 13: 4
+        line 14: 14
+        line 15: 20
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      30     0  this   Lio/vincent/learning/stack/jvm/clazzformat/TestPublicFinal;
+
+  public void rename(java.lang.String);
+    descriptor: (Ljava/lang/String;)V
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=2, args_size=2
+         0: aload_0
+         1: aload_1
+         2: putfield      #7                  // Field name:Ljava/lang/String;
+         5: return
+      LineNumberTable:
+        line 18: 0
+        line 19: 5
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       6     0  this   Lio/vincent/learning/stack/jvm/clazzformat/TestPublicFinal;
+            0       6     1  name   Ljava/lang/String;
+
+  public java.lang.String toString();
+    descriptor: ()Ljava/lang/String;
+    flags: (0x0001) ACC_PUBLIC
+    Code:
+      stack=2, locals=1, args_size=1
+         0: new           #10                 // class java/lang/StringBuilder
+         3: dup
+         4: invokespecial #11                 // Method java/lang/StringBuilder."<init>":()V
+         7: ldc           #13                 // String TestPublicFinal{individual=individual.lu, id=
+         9: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        12: aload_0
+        13: getfield      #5                  // Field id:Ljava/lang/Long;
+        16: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+        19: ldc           #16                 // String , name=
+        21: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        24: aload_0
+        25: getfield      #7                  // Field name:Ljava/lang/String;
+        28: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        31: ldc           #17                 // String , age=
+        33: invokevirtual #14                 // Method java/lang/StringBuilder.append:(Ljava/lang/String;)Ljava/lang/StringBuilder;
+        36: aload_0
+        37: getfield      #9                  // Field age:Ljava/lang/Integer;
+        40: invokevirtual #15                 // Method java/lang/StringBuilder.append:(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+        43: bipush        125
+        45: invokevirtual #18                 // Method java/lang/StringBuilder.append:(C)Ljava/lang/StringBuilder;
+        48: invokevirtual #19                 // Method java/lang/StringBuilder.toString:()Ljava/lang/String;
+        51: areturn
+      LineNumberTable:
+        line 23: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      52     0  this   Lio/vincent/learning/stack/jvm/clazzformat/TestPublicFinal;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: (0x0009) ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: new           #12                 // class io/vincent/learning/stack/jvm/clazzformat/TestPublicFinal
+         3: dup
+         4: invokespecial #20                 // Method "<init>":()V
+         7: astore_1
+         8: aload_1
+         9: ldc           #21                 // String Vincent.Lu
+        11: invokevirtual #22                 // Method rename:(Ljava/lang/String;)V
+        14: getstatic     #23                 // Field java/lang/System.out:Ljava/io/PrintStream;
+        17: aload_1
+        18: invokevirtual #24                 // Method java/io/PrintStream.println:(Ljava/lang/Object;)V
+        21: return
+      LineNumberTable:
+        line 32: 0
+        line 33: 8
+        line 34: 14
+        line 35: 21
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      22     0  args   [Ljava/lang/String;
+            8      14     1   obj   Lio/vincent/learning/stack/jvm/clazzformat/TestPublicFinal;
+}
+SourceFile: "TestPublicFinal.java"
