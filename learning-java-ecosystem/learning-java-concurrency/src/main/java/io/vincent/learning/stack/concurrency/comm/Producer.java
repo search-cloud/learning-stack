@@ -10,8 +10,8 @@ class Producer implements Runnable {
     }
 
     public void run() {
-        for (int i = 0; i < s1.length; i++) {
-            m.question(s1[i]);
+        for (String s : s1) {
+            m.question(s);
         }
     }
 }
