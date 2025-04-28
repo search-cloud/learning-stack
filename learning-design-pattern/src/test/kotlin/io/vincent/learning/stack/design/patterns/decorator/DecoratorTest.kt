@@ -1,6 +1,7 @@
 package io.vincent.learning.stack.design.patterns.decorator
 
-import org.junit.Test
+import kotlin.test.Test
+
 
 /**
  * Created by Vincent on 9/26/18.
