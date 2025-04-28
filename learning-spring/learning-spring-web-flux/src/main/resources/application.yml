@@ -1,0 +1,16 @@
+# openai
+spring:
+  ai:
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      # 127.0.0.1:11434
+      api-key: sk-6fc1925eafbb48c583dfea68e65ff201
+      chat:
+        options:
+          model: qwen-plus
+
+
+##  data:
+#    redis:
+#      url: redis://127.0.0.1
+#      port: 6379
