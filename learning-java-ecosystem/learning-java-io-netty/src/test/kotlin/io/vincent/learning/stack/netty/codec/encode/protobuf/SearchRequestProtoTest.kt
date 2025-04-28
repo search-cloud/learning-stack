@@ -1,8 +1,8 @@
 package io.vincent.learning.stack.netty.codec.encode.protobuf
 
 import com.google.protobuf.InvalidProtocolBufferException
-import org.junit.Test
 import java.util.*
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 9/2/18.

@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.algorithm.linked
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertFailsWith
 
 /**

@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.javacore;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * 字符串学习.

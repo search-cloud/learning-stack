@@ -1,7 +1,7 @@
 package io.vincent.learning.stack.algorithm.letter;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Created by Vincent on 10/16/18.
@@ -16,7 +16,7 @@ public class LetterTest {
 		String letter = "iI_love_you!i";
 		String newspaper = "i_sove_you!_i_I_l";
 		boolean loveLetterReproducible = Letter.isLoveLetterReproducible(letter, newspaper);
-		Assert.assertTrue(loveLetterReproducible);
+		Assertions.assertThat(loveLetterReproducible).isTrue();
 	}
 
 	@Test
@@ -24,6 +24,6 @@ public class LetterTest {
 		String letter = "iI_love_you!i";
 		String newspaper = "i_sove_you!_i_I_";
 		boolean loveLetterReproducible = Letter.isLoveLetterReproducible(letter, newspaper);
-		Assert.assertFalse(loveLetterReproducible);
+		Assertions.assertThat(loveLetterReproducible).isFalse();
 	}
 }

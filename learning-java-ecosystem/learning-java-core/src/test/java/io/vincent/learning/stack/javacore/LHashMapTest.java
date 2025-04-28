@@ -1,8 +1,10 @@
 package io.vincent.learning.stack.javacore;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.Map;
 
-import org.junit.Test;
+
 
 /**
  * Created by Vincent on 12/11/18.

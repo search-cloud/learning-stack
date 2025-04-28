@@ -1,24 +1,20 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("net.ltgt.apt") version "0.10"
+//    id("net.ltgt.apt") version "0.10"
 }
-
-repositories {
-    mavenCentral()
-}
-
-var lombokVersion = "1.18.4"
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-//    implementation("org.projectlombok:lombok:$lombokVersion")
-    compileOnly("org.projectlombok:lombok:$lombokVersion")
-    testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+
+    compileOnly("org.projectlombok:lombok")
+    testCompileOnly("org.projectlombok:lombok")
 
 //    apt("org.projectlombok:lombok:1.18.4")
 
     // 4.1.29.Final
-    implementation("io.netty:netty-all:4.1.29.Final")
+    implementation("io.netty:netty-all:4.1.94.Final")
     implementation("org.jctools:jctools-core:2.1.1")
 //    implementation("io.netty:netty-all:5.0.0.Alpha2")
 
@@ -28,23 +24,13 @@ dependencies {
 
     // protobuf
     // https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java
-    implementation("com.google.protobuf:protobuf-java:3.6.1")
+    implementation("com.google.protobuf:protobuf-java:3.25.1")
 
     // msgpack
     // https://mvnrepository.com/artifact/org.msgpack/msgpack
     implementation("org.msgpack:msgpack:0.6.12")
 
     // marshall
-    implementation("org.jboss.marshalling:jboss-marshalling:1.4.10.Final")
-    implementation("org.jboss.marshalling:jboss-marshalling-serial:1.4.10.Final")
-}
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
-}
-
-kotlin {
-    sourceSets {
-    }
+    implementation("org.jboss.marshalling:jboss-marshalling:2.0.11.Final")
+    implementation("org.jboss.marshalling:jboss-marshalling-serial:2.0.11.Final")
 }

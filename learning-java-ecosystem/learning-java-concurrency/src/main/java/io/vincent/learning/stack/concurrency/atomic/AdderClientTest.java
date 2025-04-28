@@ -1,11 +1,12 @@
 package io.vincent.learning.stack.concurrency.atomic;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-
-import lombok.extern.slf4j.Slf4j;
 
 /**
  * Created by Vincent on 2/25/19.
@@ -13,9 +14,10 @@ import lombok.extern.slf4j.Slf4j;
  * @author Vincent
  * @since 1.0, 2/25/19
  */
-@Slf4j
+//@Slf4j
 public class AdderClientTest {
 
+    public static final Logger log = LoggerFactory.getLogger(AdderClientTest.class);
     private int clients = 5000;
     private int threadPoolSize = 200;
 

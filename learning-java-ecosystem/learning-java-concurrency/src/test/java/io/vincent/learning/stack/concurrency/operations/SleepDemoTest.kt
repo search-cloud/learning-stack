@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.concurrency.operations
 
-import org.junit.Test
+import kotlin.test.Test
 
 /**
  * @author Asion.

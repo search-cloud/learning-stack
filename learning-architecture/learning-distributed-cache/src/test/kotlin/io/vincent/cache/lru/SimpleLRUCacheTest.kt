@@ -1,6 +1,6 @@
 package io.vincent.cache.lru
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertEquals
 
 /**

@@ -2,7 +2,7 @@ package io.vincent.learning.stack.algorithm.leetcode
 
 import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils.buildLinkedList
 import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils.printList
-import org.junit.Test
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 2019/3/24.

@@ -5,8 +5,8 @@ import io.netty.buffer.Unpooled
 import io.vincent.learning.stack.netty.protocol.netty.Header
 import io.vincent.learning.stack.netty.protocol.netty.MessageType
 import io.vincent.learning.stack.netty.protocol.netty.NettyMessage
-import org.junit.Test
 import java.util.*
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 9/4/18.

@@ -1,11 +1,9 @@
 package io.vincent.learning.mysql;
 
-import org.junit.Test;
-
-import static org.junit.Assert.*;
+import org.junit.jupiter.api.Test;;
 
 /**
- * Created by Vincent on 2020/6/3.
+ * Test JDBC.
  *
  * @author Vincent
  * @since 1.0, 2020/6/3

@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.jvm.clazzloader;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.InvocationTargetException;
 

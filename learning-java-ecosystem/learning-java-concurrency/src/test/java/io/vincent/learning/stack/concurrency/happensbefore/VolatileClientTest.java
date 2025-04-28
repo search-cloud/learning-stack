@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.concurrency.happensbefore;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;;
 
 /**
  * Created by Vincent on 2019/3/28.

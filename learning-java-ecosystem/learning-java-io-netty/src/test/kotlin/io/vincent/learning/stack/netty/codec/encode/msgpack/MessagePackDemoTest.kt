@@ -1,7 +1,6 @@
 package io.vincent.learning.stack.netty.codec.encode.msgpack
 
-
-import org.junit.Test
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 2018/8/30.

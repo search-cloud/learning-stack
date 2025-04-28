@@ -1,6 +1,6 @@
-import org.junit.Test
 import java.time.Duration
 import java.time.LocalDateTime
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 11/27/18.

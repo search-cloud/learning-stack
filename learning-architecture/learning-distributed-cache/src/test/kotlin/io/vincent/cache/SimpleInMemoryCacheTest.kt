@@ -1,9 +1,7 @@
 package io.vincent.cache
 
-import org.junit.Before
-import org.junit.FixMethodOrder
-import org.junit.Test
-import org.junit.runners.MethodSorters
+import kotlin.test.BeforeTest
+import kotlin.test.Test
 import kotlin.test.assertEquals
 import kotlin.test.assertNull
 
@@ -11,7 +9,7 @@ import kotlin.test.assertNull
  * @author Vincent
  * @since 1.0, 1/22/19
  */
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 class SimpleInMemoryCacheTest {
 
     private val simpleInMemoryCache = SimpleInMemoryCache<String, String>()
@@ -20,7 +18,7 @@ class SimpleInMemoryCacheTest {
     private val key1 = "iPhone6s"
     private val value1 = "iPhone6s 128G"
 
-    @Before
+    @BeforeTest
     fun init() {
         simpleInMemoryCache.add(key1, value1, 10 * 1000)
     }

@@ -20,8 +20,9 @@ public class SimpleDBUtil {
 	public static Connection getConnection() {
 		Connection connection;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://172.16.0.46:3306/tower?useAffectedRows=true", "root", "biosan#17");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+//			connection = DriverManager.getConnection("jdbc:mysql://172.16.0.46:3306/tower?useAffectedRows=true", "root", "biosan#17");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3360/i_learning?useAffectedRows=true", "root", "lxx@20241119");
 			return connection;
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();

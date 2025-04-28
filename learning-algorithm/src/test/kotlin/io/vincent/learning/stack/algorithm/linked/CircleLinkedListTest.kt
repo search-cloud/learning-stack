@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.algorithm.linked
 
-import org.junit.Test
+import kotlin.test.Test
 
 /**
  * Created by Vincent on 1/24/19.

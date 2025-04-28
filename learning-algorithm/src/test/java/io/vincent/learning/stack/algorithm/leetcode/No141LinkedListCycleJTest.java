@@ -3,10 +3,9 @@ package io.vincent.learning.stack.algorithm.leetcode;
 import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedList;
 import io.vincent.learning.stack.algorithm.leetcode.linked.LinkedListUtils;
 import io.vincent.learning.stack.algorithm.leetcode.linked.ListNode;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Created by Vincent on 2019/3/24.
@@ -21,7 +20,7 @@ public class No141LinkedListCycleJTest {
         LinkedList list = buildLinkedListCycle(4, 3);
         boolean hasCycle = No141LinkedListCycle.hasCycle(list.head());
         System.out.println("has cycle?: " + hasCycle);
-        assertTrue(hasCycle);
+        assertThat(hasCycle).isTrue();
     }
 
     @Test
@@ -29,7 +28,7 @@ public class No141LinkedListCycleJTest {
         LinkedList list = LinkedListUtils.buildLinkedList(4);
         boolean hasCycle = No141LinkedListCycle.hasCycle(list.head());
         System.out.println("has cycle?: " + hasCycle);
-        assertFalse(hasCycle);
+        assertThat(hasCycle).isFalse();
     }
 
     @Test
@@ -37,7 +36,7 @@ public class No141LinkedListCycleJTest {
         LinkedList list = LinkedListUtils.buildLinkedList(4);
         boolean hasCycle = No141LinkedListCycle.hasCycle1(list.head());
         System.out.println("has cycle?: " + hasCycle);
-        assertFalse(hasCycle);
+        assertThat(hasCycle).isFalse();
     }
 
     @Test
@@ -45,7 +44,7 @@ public class No141LinkedListCycleJTest {
         LinkedList list = buildLinkedListCycle(4, 3);
         boolean hasCycle = No141LinkedListCycle.hasCycle1(list.head());
         System.out.println("has cycle?: " + hasCycle);
-        assertTrue(hasCycle);
+        assertThat(hasCycle).isTrue();
     }
 
     private LinkedList buildLinkedListCycle(int n, int index) {

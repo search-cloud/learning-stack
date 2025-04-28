@@ -1,6 +1,6 @@
 package io.vincent.learning.stack.algorithm.leetcode
 
-import org.junit.Test
+import kotlin.test.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 

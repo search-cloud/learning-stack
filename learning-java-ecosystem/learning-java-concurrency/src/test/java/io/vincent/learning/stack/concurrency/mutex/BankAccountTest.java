@@ -1,8 +1,10 @@
 package io.vincent.learning.stack.concurrency.mutex;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 
 /**
  * Created by Vincent on 2/23/19.
@@ -12,10 +14,10 @@ import org.junit.Test;
  */
 public class BankAccountTest {
 
-    private BankAccount bankAccount = null;
+    private static BankAccount bankAccount = null;
 
-    @Before
-    public void init() {
+    @BeforeAll
+    static void init() {
         bankAccount = new BankAccount(10, 1L);
     }
 
@@ -27,7 +29,7 @@ public class BankAccountTest {
     @Test
     public void withdraw() {
         boolean withdraw = bankAccount.withdraw(5);
-        Assert.assertTrue(withdraw);
+        assertThat(withdraw).isTrue();
     }
 
     @Test
