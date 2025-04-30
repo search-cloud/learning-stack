@@ -25,7 +25,7 @@ const error = ref('')
 const markdownContent = ref('')
 
 onMounted(() => {
-  fetch('http://localhost:8080/v3/api/markdownStream')
+  fetch('http://localhost:8080/v4/api/markdownStream')
       .then(response => {
         const reader = response.body?.getReader()
         const decoder = new TextDecoder('utf-8')
@@ -37,8 +37,9 @@ onMounted(() => {
               return
             }
             const chunk = decoder.decode(value)
+            const cleaned = chunk.replace(/^data:\s?/gm, '');
             console.log('收到数据块:', chunk)
-            markdownContent.value += chunk + '\n'
+            markdownContent.value += cleaned
             renderMarkdownAndScroll()
             readChunk()
           })

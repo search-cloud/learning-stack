@@ -68,6 +68,7 @@ listOf(
     "learning-architecture:learning-distributed-search",
     "learning-architecture:learning-flash-sale",
     "learning-spring:learning-spring-web-flux",
+    "learning-spring:learning-spring-ai",
     "learning-mq",
     "learning-data-stream",
     "learning-elasticsearch",

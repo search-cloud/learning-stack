@@ -36,6 +36,14 @@ public class MarkdownStreamService {
         );
     }
 
+    public Flux<String> chunkToCharacterFlux(Flux<String> chunkFlux, Duration delayPerChar) {
+        return chunkFlux
+                .flatMap(chunk ->
+                        Flux.fromIterable(chunk.chars().mapToObj(c -> String.valueOf((char) c)).toList())
+                                .delayElements(delayPerChar) // 控制速度
+                );
+    }
+
     private Mono<Flux<String>> callLargeModel(ConversationContext context, String prompt) {
         // 模拟流式返回大模型输出
         return Mono.fromSupplier(() -> {
